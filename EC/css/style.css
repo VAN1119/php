@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+}
+header {
+    height: 10%;
+    border: #000 solid 3px;
+}
+nav {
+    height: 10%;
+    border: #000 solid 3px;
+}
+main {
+    height: 70%;
+    border: #000 solid 3px;
+}
+footer {
+    height: 10%;
+    border: #000 solid 3px;
+}
+.fullheight {
+    height: 100%;
+    background: #bbddff;
+  }
+header h1 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 50px;
+    font-weight: bold;
+}
+.btn-cover {
+    position: absolute;
+    left: 5%;
+    top: 40%;
+    display: flex;
+    width: 90%;
+    height: auto;
+    margin: auto;
+    justify-content: center;
+}
+.cover {
+    text-align: center;
+}
+.cover h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+.ligin_b {
+    text-align: center;
+}
+.login input {
+    width: 300px;
+    height: 45px;
+    margin-bottom: 20px;
+}
+
+.start_btn {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    width: 250px;
+    display: block;
+    line-height: 2.4em; /* 高さを中央揃え …難しい*/
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+    border: 3px solid black;
+    margin: 0 50px;
+}
+.start_btn:hover {
+    color:white;
+    background-color: black;
+}
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    right: 5%;
+    margin-bottom: 2px;
+}
+.nav li {
+    margin: 20px 60px;
+}
+.item_detail {
+    text-align: center;
+}
+.item_name, .item_comment {
+    text-align: left;
+}
+.item_explain{
+    display: flex;
+    justify-content: center;
+    border: #f00 solid 3px;
+}
+.item_img {
+    margin: 0 180px;
+}
+.item_name {
+    font-size: 35px;
+    margin: 15px;
+}
+.item_price {
+    font-size: 20px;
+    text-align: right;
+    margin: 10px;
+}
+.buy_btn {
+    display:flex;
+    justify-content: center;
+}
+.buy_btn2 {
+    margin: 10px 20px;
+}
+.btn a {
+    margin: 0 auto;
+}
+.item_favorite {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.ans {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0 auto;
+    text-align: center;
+}
+footer {
+    text-align: center;
+}
