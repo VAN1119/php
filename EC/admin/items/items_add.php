@@ -54,19 +54,22 @@
         if (isset($_POST["i_count"])) {
             $i_count = $_POST["i_count"];
         }
-        if(file_exists($filename)){
-            $i = count(file($filename)) + 1;
-            $lines = file($filename);
-            for ($k = 0; $k < count($lines); $k++) {
-                $line = explode("<>", $lines[$k]);
-                if ($line[0] >= $i) {
-                    $i = $line[0] + 1;
-                }
-            }
-        } else {
-            $i = 1;
-        }
         if (!empty($i_name) && !empty($i_comment) && !empty($i_price) && !empty($i_count)) {
+            // 投稿番号取得
+            if(file_exists($filename)){
+                $i = count(file($filename)) + 1;
+                $lines = file($filename);
+                $i = 0;
+                for ($k = 0; $k < count($lines); $k++) {
+                    $line = explode("<>", $lines[$k]);
+                    if ($line[0] >= $i) {
+                        $i = $line[0] + 1;
+                    }
+                }
+            } else {
+                $i = 1;
+            }
+            // ファイル処理
             $fp = fopen($filename, "a");
             fwrite($fp, $i.",".$i_name.",".$i_comment.",".$i_price.",".$i_count.","."1".","."5".",".$date.PHP_EOL);
             fclose($fp);

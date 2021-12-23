@@ -30,12 +30,12 @@
         <div class="cover">
             <div class="login">
                 <form method="POST" action="">
+                    <input type="submit" name="submit" value="編集">    
                     <p><input type="text" name="i_name" placeholder="商品名" value=""></p>
                     <p><textarea name="i_comment" rows="4" cols="40" placeholder="商品説明" value=""></textarea></p>
                     <p><input type="number" name="i_price" placeholder="値段" value=""></p>
                     <p><input type="number" name="i_count" placeholder="在庫数" value=""></p>
-                    <p><input type="number" name="edit" placeholder="編集番号" value=""></p>
-                    <input type="submit" name="submit" value="編集">              
+                    <p><input type="number" name="edit" placeholder="編集番号" value=""></p>          
                 </form>
             </div>
         </div>
@@ -58,19 +58,20 @@
         if (isset($_POST["edit"])) {
             $edit = $_POST["edit"];
         }
-        if(file_exists($filename)){
-            $i = count(file($filename)) + 1;
-            $lines = file($filename);
-            for ($k = 0; $k < count($lines); $k++) {
-                $line = explode("<>", $lines[$k]);
-                if ($line[0] >= $i) {
-                    $i = ($line[0] + 1);
-                }
-            }
-        } else {
-            $i = 1;
-        }
         if (!empty($i_name) && !empty($i_comment) && !empty($i_price) && !empty($i_count) && empty($edit)) {
+            // 投稿番号取得
+            if(file_exists($filename)){
+                $i = count(file($filename)) + 1;
+                $lines = file($filename);
+                for ($k = 0; $k < count($lines); $k++) {
+                    $line = explode("<>", $lines[$k]);
+                    if ($line[0] >= $i) {
+                        $i = $line[0] + 1;
+                    }
+                }
+            } else {
+                $i = 1;
+            }
             $fp = fopen($filename, "a");
             fwrite($fp, $i.",".$i_name.",".$i_comment.",".$i_price.",".$i_count.","."1".","."5".",".$date.PHP_EOL);
             fclose($fp);
@@ -78,11 +79,11 @@
         } else if (!empty($edit)) {
             $lines = file($filename);
             $fp = fopen($filename, "w");
-            for ($k = 0; $k < count($lines); $k++) {
-                $line = explode(",", $lines[$k]);
+            for ($i = 0; $i < count($lines); $i++) {
+                $line = explode(",", $lines[$i]);
                 $enum = $line[0];
                 if ($enum != $edit){
-                    fwrite($fp, $lines[$k]);
+                    fwrite($fp, $lines[$i]);
                 } else {
                     fwrite($fp, $edit.",".$i_name.",".$i_comment.",".$i_price.",".$i_count.","."1".","."5".",".$date.PHP_EOL);
                 }
