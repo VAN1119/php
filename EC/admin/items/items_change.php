@@ -30,12 +30,12 @@
         <div class="cover">
             <div class="login">
                 <form method="POST" action="">
-                    <input type="submit" name="submit" value="編集">    
+                    <p><input type="number" name="edit" placeholder="編集番号" value=""></p>
                     <p><input type="text" name="i_name" placeholder="商品名" value=""></p>
                     <p><textarea name="i_comment" rows="4" cols="40" placeholder="商品説明" value=""></textarea></p>
                     <p><input type="number" name="i_price" placeholder="値段" value=""></p>
                     <p><input type="number" name="i_count" placeholder="在庫数" value=""></p>
-                    <p><input type="number" name="edit" placeholder="編集番号" value=""></p>          
+                    <input type="submit" name="submit" value="編集">
                 </form>
             </div>
         </div>
@@ -64,7 +64,7 @@
                 $i = count(file($filename)) + 1;
                 $lines = file($filename);
                 for ($k = 0; $k < count($lines); $k++) {
-                    $line = explode("<>", $lines[$k]);
+                    $line = explode(",", $lines[$k]);
                     if ($line[0] >= $i) {
                         $i = $line[0] + 1;
                     }
@@ -77,6 +77,7 @@
             fclose($fp);
             echo "商品追加しました。<br><br>";
         } else if (!empty($edit)) {
+            $flag = 0;
             $lines = file($filename);
             $fp = fopen($filename, "w");
             for ($i = 0; $i < count($lines); $i++) {
@@ -86,11 +87,19 @@
                     fwrite($fp, $lines[$i]);
                 } else {
                     fwrite($fp, $edit.",".$i_name.",".$i_comment.",".$i_price.",".$i_count.","."1".","."5".",".$date.PHP_EOL);
+                    $falg = 1;
                 }
             }
             fclose($fp);
-            echo "商品変更しました。<br><br>";
+            if ($flag == 1) {
+                echo "商品変更しました。<br><br>";
+            } else {
+                echo "編集番号の商品がありませんでした。<br><br>";
+            }
         }
+        ?>
+        </p>
+        <?php
         if(file_exists($filename)){
             $lines = file($filename,FILE_IGNORE_NEW_LINES);
             foreach($lines as $line){
@@ -98,7 +107,6 @@
             }
         }
         ?>
-        </p>
     </main>
     <footer>
         <small>&copy;2021 Ban</small>

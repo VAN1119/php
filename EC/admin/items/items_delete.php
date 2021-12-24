@@ -43,6 +43,7 @@
             $delete = $_POST["delete"];
         }
         if (!empty($delete)) {
+            $flag = 0;
             $lines = file($filename);
             $fp = fopen($filename, "w");
             for ($k = 0; $k < count($lines); $k++) {
@@ -50,11 +51,20 @@
                 $dnum = $line[0];
                 if ($dnum != $delete){
                     fwrite($fp, $lines[$k]);
+                } else {
+                    $flag = 1;
                 }
             }
             fclose($fp);
-            echo "商品削除しました。<br><br>";
+            if ($flag == 0) {
+                echo "商品削除しました。<br><br>";
+            } else {
+                echo "削除番号の商品がありませんでした。<br><br>";
+            }
         }
+        ?>
+        </p>
+        <?php
         if(file_exists($filename)){
             $lines = file($filename,FILE_IGNORE_NEW_LINES);
             foreach($lines as $line){
@@ -62,7 +72,6 @@
             }
         }
         ?>
-        </p>
     </main>
     <footer>
         <small>&copy;2021 Ban</small>

@@ -59,9 +59,8 @@
             if(file_exists($filename)){
                 $i = count(file($filename)) + 1;
                 $lines = file($filename);
-                $i = 0;
                 for ($k = 0; $k < count($lines); $k++) {
-                    $line = explode("<>", $lines[$k]);
+                    $line = explode(",", $lines[$k]);
                     if ($line[0] >= $i) {
                         $i = $line[0] + 1;
                     }
@@ -74,15 +73,17 @@
             fwrite($fp, $i.",".$i_name.",".$i_comment.",".$i_price.",".$i_count.","."1".","."5".",".$date.PHP_EOL);
             fclose($fp);
             echo "商品追加しました。<br><br>";
-            if(file_exists($filename)){
-                $lines = file($filename,FILE_IGNORE_NEW_LINES);
-                foreach($lines as $line){
-                    echo $line."<br>";
-                }
-            }
         }
         ?>
         </p>
+        <?php
+        if(file_exists($filename)){
+            $lines = file($filename,FILE_IGNORE_NEW_LINES);
+            foreach($lines as $line){
+                echo $line."<br>";
+            }
+        }
+        ?>
     </main>
     <footer>
         <small>&copy;2021 Ban</small>
