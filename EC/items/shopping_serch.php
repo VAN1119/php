@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/reset.css">
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
     <!-- h1 fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    <link rel="icon" href="../../images/net_shop.png">
-    <title>お気に入り</title>
+    <link rel="icon" href="../images/net_shop.png">
+    <title>商品検索</title>
 </head>
 <body>
     <header>
@@ -32,21 +32,8 @@
     </nav>
     <main>
         <div class="cover">
-            <h2>お気に入り画面</h2>
-            <div class="item_favorite">
-                <div class="fitem_cover">
-                    <a href="shopping_detail.html"><img class="" src="../../images/net_shop.png" alt="表示例" width="200px">
-                    <p class="">アイテム名1</p></a>
-                </div>
-                <div class="fitem_cover">
-                    <a href="shopping_detail.html"><img class="" src="../../images/toy_glass_dome.png" alt="表示例" width="200px">
-                    <p class="">アイテム名2</p></a>
-                </div>
-                <div class="fitem_cover">
-                    <a href="shopping_detail.html"><img class="" src="../../images/toy_kibori_kuma.png" alt="表示例" width="200px">
-                    <p class="">アイテム名3</p></a>
-                </div>
-            </div>
+            <h2>検索画面</h2>
+            <p>検索結果一覧</p>
         </div>
     </main>
     <footer>

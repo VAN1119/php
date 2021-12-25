@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/reset.css">
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
     <!-- h1 fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    <link rel="icon" href="../../images/net_shop.png">
+    <link rel="icon" href="../images/net_shop.png">
     <title>商品変更</title>
 </head>
 <body>
@@ -19,7 +19,7 @@
     </header>
     <nav>
         <div class="buy_btn">
-            <a class="start_btn buy_btn2" href="../admin_top.php">管理トップ</a>
+            <a class="start_btn buy_btn2" href="../admin/admin_top.php">管理トップ</a>
         </div>
     </nav>
     <main>
@@ -32,7 +32,7 @@
                 <form method="POST" action="">
                     <p><input type="number" name="edit" placeholder="編集番号" value=""></p>
                     <p><input type="text" name="i_name" placeholder="商品名" value=""></p>
-                    <p><textarea name="i_comment" rows="4" cols="40" placeholder="商品説明" value=""></textarea></p>
+                    <p><input type="text" name="i_comment" placeholder="商品説明" value=""></p>
                     <p><input type="number" name="i_price" placeholder="値段" value=""></p>
                     <p><input type="number" name="i_count" placeholder="在庫数" value=""></p>
                     <input type="submit" name="submit" value="編集">
@@ -42,6 +42,7 @@
         <p class="ans">
         <?php
         $filename = "items.csv";
+        $lines = file($filename,FILE_IGNORE_NEW_LINES);
         $date = date("Y年m月d日 H時i分s秒");
         if (isset($_POST["i_name"])) {
             $i_name = $_POST["i_name"];
@@ -62,7 +63,6 @@
             // 投稿番号取得
             if(file_exists($filename)){
                 $i = count(file($filename)) + 1;
-                $lines = file($filename);
                 for ($k = 0; $k < count($lines); $k++) {
                     $line = explode(",", $lines[$k]);
                     if ($line[0] >= $i) {
@@ -78,7 +78,6 @@
             echo "商品追加しました。<br><br>";
         } else if (!empty($edit)) {
             $flag = 0;
-            $lines = file($filename);
             $fp = fopen($filename, "w");
             for ($i = 0; $i < count($lines); $i++) {
                 $line = explode(",", $lines[$i]);
@@ -86,8 +85,8 @@
                 if ($enum != $edit){
                     fwrite($fp, $lines[$i]);
                 } else {
+                    $flag = 1;
                     fwrite($fp, $edit.",".$i_name.",".$i_comment.",".$i_price.",".$i_count.","."1".","."5".",".$date.PHP_EOL);
-                    $falg = 1;
                 }
             }
             fclose($fp);
@@ -101,9 +100,9 @@
         </p>
         <?php
         if(file_exists($filename)){
-            $lines = file($filename,FILE_IGNORE_NEW_LINES);
             foreach($lines as $line){
-                echo $line."<br>";
+                $array = explode(",", $line);
+                echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[2]." 金額:".$array[3]." 在庫:".$array[4]."<br>";
             }
         }
         ?>

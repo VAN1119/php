@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/reset.css">
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
     <!-- h1 fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    <link rel="icon" href="../../images/net_shop.png">
-    <title>カート</title>
+    <link rel="icon" href="../images/net_shop.png">
+    <title>購入</title>
 </head>
 <body>
     <header>
@@ -31,23 +31,9 @@
     </nav>
     <main>
         <div class="cover">
-            <h2>カート画面</h2>
-            <div class="item_cart">
-                <div class="cart_cover">
-                    <p class="">アイテム名1 金額円</p>
-                </div>
-                <div class="cart_cover">
-                    <p class="">アイテム名2 金額円</p>
-                </div>
-                <div class="cart_cover">
-                    <p class="">アイテム名3 金額円</p>
-                </div>
-            </div>
-            <hr>
-            <p class="total_price">合計金額</p>
-            <div class="btn">
-                <a class="start_btn" href="shopping_buy.html">購入</a>
-            </div>
+            <h2>購入画面</h2>
+            <p>ご購入ありがとうございました。</p>
+            <p>購入金額￥￥￥￥￥￥￥￥￥￥円</p>
         </div>
     </main>
     <footer>

@@ -51,7 +51,7 @@
                 foreach ($lines as $line) {
                     $users = explode(",", $line);
                     if ($users[0] == $id && $users[1] == $pass) {
-                        header("Location:user_top.php");
+                        header("Location:../items/user_top.php");
                     }
                 }
                 echo "<br>IDまたはPASSWORD、<br>もしくはその両方が間違っています";
