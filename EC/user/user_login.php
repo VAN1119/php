@@ -37,12 +37,12 @@
         </div>
         <p class="ans">
             <?php
-            $id = "";
-            $pass = "";
-            if (!empty($_POST["id"])) {
+            // $id = "";
+            // $pass = "";
+            if (isset($_POST["id"])) {
                 $id = $_POST["id"];
             }
-            if (!empty($_POST["pass"])) {
+            if (isset($_POST["pass"])) {
                 $pass = $_POST["pass"];
             }
             if (!empty($id) && !empty($pass)) {

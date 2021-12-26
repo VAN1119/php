@@ -19,7 +19,7 @@
     </header>
     <nav>
         <ul class="nav">
-            <a href="../user_top.html">トップ画面　　　　　</a>
+            <a href="../user_top.html">トップ画面        </a>
             <a href="shopping_detail.html">商品詳細</a>
             <li><a href="shopping_favorite.html">お気に入り</a></li>
             <li>

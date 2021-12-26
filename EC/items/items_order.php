@@ -62,6 +62,18 @@
             fclose($fp);
             if ($flag == 1) {
                 echo "商品追加しました。<br><br>";
+                ?>
+                </p>
+                <?php
+                if(file_exists($filename)){
+                    foreach($lines as $line){
+                        $array = explode(",", $line);
+                        echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[2]." 金額:".$array[3]." 在庫:".$array[4]."<br>";
+                    }
+                }
+                ?>
+            <p class="ans">
+            <?php
             } else {
                 echo "追加番号の商品がありませんでした。<br><br>";
             }
@@ -69,14 +81,6 @@
         }
         ?>
         </p>
-        <?php
-        if(file_exists($filename)){
-            foreach($lines as $line){
-                $array = explode(",", $line);
-                echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[2]." 金額:".$array[3]." 在庫:".$array[4]."<br>";
-            }
-        }
-        ?>
     </main>
     <footer>
         <small>&copy;2021 Ban</small>

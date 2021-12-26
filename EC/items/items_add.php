@@ -73,15 +73,16 @@
             fwrite($fp, $i.",".$i_name.",".$i_comment.",".$i_price.",".$i_count.","."1".","."5".",".$date.PHP_EOL);
             fclose($fp);
             echo "商品追加しました。<br><br>";
-        }
-        ?>
-        </p>
-        <?php
-        if(file_exists($filename)){
-            foreach($lines as $line){
-                $array = explode(",", $line);
-                echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[2]." 金額:".$array[3]." 在庫:".$array[4]."<br>";
+            ?>
+            </p>
+            <?php
+            if(file_exists($filename)){
+                foreach($lines as $line){
+                    $array = explode(",", $line);
+                    echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[2]." 金額:".$array[3]." 在庫:".$array[4]."<br>";
+                }
             }
+            
         }
         ?>
     </main>

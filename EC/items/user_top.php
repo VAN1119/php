@@ -19,7 +19,7 @@
     </header>
     <nav>
         <ul class="nav">
-            <li><a href="shopping_favorite.html">お気に入り</a></li>
+            <li><a href="shopping_favorite.php">お気に入り</a></li>
             <li>
                 <form action="" method="post">
                     <input type="search" name="search" placeholder="アイテムを探す">
@@ -30,16 +30,16 @@
     </nav>
     <main>
         <h2>売れ筋商品</h2>
-        <a href="shopping_detail.html"><img src="../images/game_reversi_board.png" alt="オセロ" width="200px"></a>
-        <a href="shopping_detail.html"><img src="../images/kandume_kuuki_close.png" alt="空気" width="200px"></a>
-        <a href="shopping_detail.html"><img src="../images/megane_3d_blue_red.png" alt="3Dメガネ" width="200px"></a>
-        <a href="shopping_detail.html"><img src="../images/omen_tengu.png" alt="天狗" width="200px"></a>
-        <a href="shopping_detail.html"><img src="../images/origami_kamideppou.png" alt="紙" width="200px"></a>
-        <a href="shopping_detail.html"><img src="../images/science_kessyou_kouzou_mokei.png" alt="" width="200px"></a>
-        <a href="shopping_detail.html"><img src="../images/toy_dorodango.png" alt="キレイな泥団子" width="200px"></a>
-        <a href="shopping_detail.html"><img src="../images/toy_dorodango_kirei.png" alt="泥団子" width="200px"></a>
-        <a href="shopping_detail.html"><img src="../images/toy_glass_dome.png" alt="ガラスケース" width="200px"></a>
-        <a href="shopping_detail.html"><img src="../images/toy_kibori_kuma.png" alt="クマ" width="200px"></a>
+        <a href="shopping_detail.php"><img src="../images/game_reversi_board.png" alt="オセロ" width="200px"></a>
+        <a href="shopping_detail.php"><img src="../images/kandume_kuuki_close.png" alt="空気" width="200px"></a>
+        <a href="shopping_detail.php"><img src="../images/megane_3d_blue_red.png" alt="3Dメガネ" width="200px"></a>
+        <a href="shopping_detail.php"><img src="../images/omen_tengu.png" alt="天狗" width="200px"></a>
+        <a href="shopping_detail.php"><img src="../images/origami_kamideppou.png" alt="紙" width="200px"></a>
+        <a href="shopping_detail.php"><img src="../images/science_kessyou_kouzou_mokei.png" alt="" width="200px"></a>
+        <a href="shopping_detail.php"><img src="../images/toy_dorodango.png" alt="キレイな泥団子" width="200px"></a>
+        <a href="shopping_detail.php"><img src="../images/toy_dorodango_kirei.png" alt="泥団子" width="200px"></a>
+        <a href="shopping_detail.php"><img src="../images/toy_glass_dome.png" alt="ガラスケース" width="200px"></a>
+        <a href="shopping_detail.php"><img src="../images/toy_kibori_kuma.png" alt="クマ" width="200px"></a>
         <div class="cover">
         </div>
     </main>
