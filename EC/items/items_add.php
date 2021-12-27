@@ -41,7 +41,6 @@
         <p class="ans">
         <?php
         $filename = "items.csv";
-        $lines = file($filename,FILE_IGNORE_NEW_LINES);
         $date = date("Y年m月d日 H時i分s秒");
         if (isset($_POST["i_name"])) {
             $i_name = $_POST["i_name"];
@@ -58,15 +57,17 @@
         if (!empty($i_name) && !empty($i_comment) && !empty($i_price) && !empty($i_count)) {
             // 投稿番号取得
             if(file_exists($filename)){
-                $i = count(file($filename)) + 1;
+                $lines = file($filename);
                 for ($k = 0; $k < count($lines); $k++) {
                     $line = explode(",", $lines[$k]);
-                    if ($line[0] >= $i) {
-                        $i = $line[0] + 1;
+                    $max = $line[0];
+                    if ($line[0] >= $max) {
+                        $max = $line[0] + 1;
                     }
+                    $i = $max;
                 }
             } else {
-                $i = 1;
+                $i = 1001;
             }
             // ファイル処理
             $fp = fopen($filename, "a");
@@ -74,15 +75,15 @@
             fclose($fp);
             echo "商品追加しました。<br><br>";
             ?>
-            </p>
+        </p>
             <?php
             if(file_exists($filename)){
+                $lines = file($filename,FILE_IGNORE_NEW_LINES);
                 foreach($lines as $line){
                     $array = explode(",", $line);
                     echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[2]." 金額:".$array[3]." 在庫:".$array[4]."<br>";
                 }
             }
-            
         }
         ?>
     </main>
