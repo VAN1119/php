@@ -59,9 +59,10 @@
         if (isset($_POST["edit"])) {
             $edit = $_POST["edit"];
         }
-        if (!empty($i_name) && !empty($i_comment) && !empty($i_price) && !empty($i_count) && empty($edit)) {
+        /* if (!empty($i_name) && !empty($i_comment) && !empty($i_price) && !empty($i_count) && empty($edit)) {
             // 投稿番号取得
             if(file_exists($filename)){
+                $lines = file($filename,FILE_IGNORE_NEW_LINES);
                 $i = count(file($filename)) + 1;
                 for ($k = 0; $k < count($lines); $k++) {
                     $line = explode(",", $lines[$k]);
@@ -70,46 +71,47 @@
                     }
                 }
             } else {
-                $i = 1;
+                $i = 1001;
             }
             $fp = fopen($filename, "a");
             fwrite($fp, $i.",".$i_name.",".$i_comment.",".$i_price.",".$i_count.","."1".","."5".",".$date.PHP_EOL);
             fclose($fp);
             echo "商品追加しました。<br><br>";
-        } else if (!empty($edit)) {
+        } else */
+        if (!empty($edit)) {
             $flag = 0;
+            $lines = file($filename,FILE_IGNORE_NEW_LINES);
             $fp = fopen($filename, "w");
             for ($i = 0; $i < count($lines); $i++) {
                 $line = explode(",", $lines[$i]);
                 $enum = $line[0];
                 if ($enum != $edit){
-                    fwrite($fp, $lines[$i]);
+                    fwrite($fp, $lines[$i].PHP_EOL);
                 } else {
-                    $flag = 1;
                     fwrite($fp, $edit.",".$i_name.",".$i_comment.",".$i_price.",".$i_count.","."1".","."5".",".$date.PHP_EOL);
+                    $flag = 1;
                 }
             }
             fclose($fp);
             if ($flag == 1) {
                 echo "商品変更しました。<br><br>";
-            ?>
-            </p>
-            <?php
-                if(file_exists($filename)){
-                foreach($lines as $line){
-                    $array = explode(",", $line);
-                    echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[2]." 金額:".$array[3]." 在庫:".$array[4]."<br>";
-                }
-            }
-            ?>
-            <p class="ans">
-            <?php
             } else {
                 echo "編集番号の商品がありませんでした。<br><br>";
             }
+        } else {
+            echo "編集番号を入力してください。";
         }
         ?>
         </p>
+        <?php
+        if(file_exists($filename)){
+            $lines = file($filename,FILE_IGNORE_NEW_LINES);
+            foreach($lines as $line){
+                $array = explode(",", $line);
+                echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[2]." 金額:".$array[3]." 在庫:".$array[4]."<br>";
+            }
+        }
+        ?>
     </main>
     <footer>
         <small>&copy;2021 Ban</small>

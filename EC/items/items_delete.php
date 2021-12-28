@@ -45,12 +45,13 @@
         }
         if (!empty($delete)) {
             $flag = 0;
+            $lines = file($filename,FILE_IGNORE_NEW_LINES);
             $fp = fopen($filename, "w");
             for ($k = 0; $k < count($lines); $k++) {
                 $line = explode(",", $lines[$k]);
                 $dnum = $line[0];
                 if ($dnum != $delete){
-                    fwrite($fp, $lines[$k]);
+                    fwrite($fp, $lines[$k].PHP_EOL);
                 } else {
                     $flag = 1;
                 }
@@ -58,24 +59,21 @@
             fclose($fp);
             if ($flag == 1) {
                 echo "商品削除しました。<br><br>";
-            ?>
-            </p>
-            <?php
-            if(file_exists($filename)){
-                foreach($lines as $line){
-                    $array = explode(",", $line);
-                    echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[2]." 金額:".$array[3]." 在庫:".$array[4]."<br>";
-                }
-            }
-            ?>
-            <p class="ans">
-            <?php
             } else {
                 echo "削除番号の商品がありませんでした。<br><br>";
             }
         }
         ?>
-        </P>
+        </p>
+        <?php
+        if(file_exists($filename)){
+            $lines = file($filename,FILE_IGNORE_NEW_LINES);
+            foreach($lines as $line){
+                $array = explode(",", $line);
+                echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[2]." 金額:".$array[3]." 在庫:".$array[4]."<br>";
+            }
+        }
+        ?>
     </main>
     <footer>
         <small>&copy;2021 Ban</small>
