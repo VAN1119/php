@@ -46,9 +46,10 @@
         if (isset($_POST["order"])) {
             $order = $_POST["order"];
         }
-        if (!empty($o_count) && !empty($order)) {
+        if (!empty($order) && !empty($o_count)) {
             $flag = 0;
             $fp = fopen($filename, "w");
+            $lines = file($filename,FILE_IGNORE_NEW_LINES);
             for ($k = 0; $k < count($lines); $k++) {
                 $line = explode(",", $lines[$k]);
                 $onum = $line[0];
@@ -62,18 +63,6 @@
             fclose($fp);
             if ($flag == 1) {
                 echo "商品追加しました。<br><br>";
-                ?>
-                </p>
-                <?php
-                if(file_exists($filename)){
-                    foreach($lines as $line){
-                        $array = explode(",", $line);
-                        echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[2]." 金額:".$array[3]." 在庫:".$array[4]."<br>";
-                    }
-                }
-                ?>
-            <p class="ans">
-            <?php
             } else {
                 echo "追加番号の商品がありませんでした。<br><br>";
             }
@@ -81,6 +70,15 @@
         }
         ?>
         </p>
+        <?php
+        if(file_exists($filename)){
+            $lines = file($filename,FILE_IGNORE_NEW_LINES);
+            foreach($lines as $line){
+                $array = explode(",", $line);
+                echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[2]." 金額:".$array[3]." 在庫:".$array[4]."<br>";
+            }
+        }
+        ?>
     </main>
     <footer>
         <small>&copy;2021 Ban</small>
