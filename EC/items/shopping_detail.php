@@ -34,7 +34,7 @@
             <h2>商品詳細画面</h2>
         </div>
         <div class="item_explain">
-            <img class="item_img" src="../images/net_shop.png" alt="表示例" wcountth="200px">
+            <img class="item_img" src="../images/net_shop.png" alt="表示例" width="200px">
             <div class="item_word">
                 <p class="item_name">アイテム名</p>
                 <p class="item_comment">1行目説明文説明文説明文説明文説明文説明文説明文説明文説明文<br>2行目説明文説明文説明文説明文説明文説明文説明文説明文説明文<br>3行目説明文説明文説明文説明文説明文説明文説明文説明文説明文</p>
@@ -54,30 +54,30 @@
             <a class="start_btn buy_btn2" href="shopping_cart.html">カートへ移動</a>
         </div>
         <?php
+        $item_name = "商品名";
+        $item_price = 100;
         if (isset($_POST["count"])) {
             $count = $_POST["count"];
         }
         if (isset($_POST["favorite"])) {
-            $favorite = "お気に入りへ登録しました。"
+            $favorite = "お気に入りへ登録しました。";
         }
         if (!empty($count)) {
-            $fileitems = "items.csv";
-            $lines = file($fileitems,FILE_IGNORE_NEW_LINES);
             $filecart = "cart.csv";
             $fp = fopen($filecart, "a");
-            // カートへの書き込み内容検討　fwrite($fp, $count.PHP_EOL);
+            fwrite($fp, $count.",".$item_name.",".$item_price.PHP_EOL);
+            // 必要項目：数量、商品名、単価
             fclose($fp);
-            echo "カートへ追加しました。"
+            echo "カートへ追加しました。";
         } else if (empty($count) && empty($favorite)) {
-            echo "数量を入力してください。"
+            echo "数量を入力してください。";
         } else {
-            $fileitems = "items.csv";
-            $lines = file($fileitems,FILE_IGNORE_NEW_LINES);
             $filefavo = "favorite.csv";
             $fp = fopen($filefavo, "a");
-            // お気に入りへの書き込み内容検討　fwrite($fp, $count.PHP_EOL);
+            fwrite($fp, $item_name.",".$item_price.PHP_EOL);
+            // 必要項目：商品名、単価
             fclose($fp);
-            echo "お気に入りへ追加しました。"
+            echo "お気に入りへ追加しました。";
         }
         ?>
     </main>

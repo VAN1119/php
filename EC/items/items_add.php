@@ -57,6 +57,7 @@
         if (!empty($i_name) && !empty($i_comment) && !empty($i_price) && !empty($i_count)) {
             // 投稿番号取得
             if(file_exists($filename)){
+                $i = 1001;
                 $lines = file($filename);
                 for ($k = 0; $k < count($lines); $k++) {
                     $line = explode(",", $lines[$k]);
