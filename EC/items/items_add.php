@@ -85,7 +85,7 @@
                 $array = explode(",", $line);
                 echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[2]." 金額:".$array[3]." 在庫:".$array[4]."<br>";
             }
-        }    
+        }
         ?>
     </main>
     <footer>

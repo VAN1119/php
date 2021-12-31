@@ -19,8 +19,8 @@
     </header>
     <nav>
         <ul class="nav">
-            <a href="../user_top.html">トップ画面</a>
-            <li><a href="shopping_favorite.html">お気に入り</a></li>
+            <a href="user_top.php">トップ画面</a>
+            <li><a href="shopping_favorite.php">お気に入り</a></li>
             <li>
                 <form action="" method="post">
                     <input type="search" name="search" placeholder="キーワードを入力">
@@ -32,21 +32,22 @@
     <main>
         <div class="cover">
             <h2>カート画面</h2>
-            <div class="item_cart">
-                <div class="cart_cover">
-                    <p class="">アイテム名1 金額円</p>
-                </div>
-                <div class="cart_cover">
-                    <p class="">アイテム名2 金額円</p>
-                </div>
-                <div class="cart_cover">
-                    <p class="">アイテム名3 金額円</p>
-                </div>
-            </div>
+            <?php
+            $filecart = "cart.csv";
+            $total = 0;
+            if(file_exists($filecart)){
+                $clines = file($filecart,FILE_IGNORE_NEW_LINES);
+                foreach($clines as $cline){
+                    $array = explode(",", $cline);
+                    echo "商品名:".$array[1]." 数量:".$array[0]." 単価:".$array[2]." 合計金額:".$array[0] * $array[2]."円<br>";
+                    $total += $array[0] * $array[2];
+                }
+            }
+            ?>
             <hr>
-            <p class="total_price">合計金額</p>
+            <p class="total_price">合計金額:<?php echo $total ?>円</p>
             <div class="btn">
-                <a class="start_btn" href="shopping_buy.html">購入</a>
+                <a class="start_btn" href="shopping_buy.php">購入</a>
             </div>
         </div>
     </main>

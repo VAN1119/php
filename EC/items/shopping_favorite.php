@@ -19,9 +19,8 @@
     </header>
     <nav>
         <ul class="nav">
-            <a href="../user_top.html">トップ画面        </a>
-            <a href="shopping_detail.html">商品詳細</a>
-            <li><a href="shopping_favorite.html">お気に入り</a></li>
+            <a href="user_top.php">トップ画面        </a>
+            <li><a href="shopping_favorite.php">お気に入り</a></li>
             <li>
                 <form action="" method="post">
                     <input type="search" name="search" placeholder="キーワードを入力">
@@ -34,18 +33,22 @@
         <div class="cover">
             <h2>お気に入り画面</h2>
             <div class="item_favorite">
-                <div class="fitem_cover">
-                    <a href="shopping_detail.html"><img class="" src="../../images/net_shop.png" alt="表示例" width="200px">
-                    <p class="">アイテム名1</p></a>
-                </div>
-                <div class="fitem_cover">
-                    <a href="shopping_detail.html"><img class="" src="../../images/toy_glass_dome.png" alt="表示例" width="200px">
-                    <p class="">アイテム名2</p></a>
-                </div>
-                <div class="fitem_cover">
-                    <a href="shopping_detail.html"><img class="" src="../../images/toy_kibori_kuma.png" alt="表示例" width="200px">
-                    <p class="">アイテム名3</p></a>
-                </div>
+            <?php
+            $filefavo = "favorite.csv";
+            $total = 0;
+            if(file_exists($filefavo)){
+                $flines = file($filefavo,FILE_IGNORE_NEW_LINES);
+                foreach($flines as $fline){
+                    $array = explode(",", $fline);
+                    ?>
+                    <a href="shopping_detail.php"><img class="" src="../images/<?php echo $array[2]?>" alt="表示例" width="200px">
+                    <?php
+                    echo "商品名:".$array[0]."<br> 金額:".$array[1]."円";
+                }
+            } else {
+                echo "お気に入りに登録している商品はありません";
+            }
+            ?>
             </div>
         </div>
     </main>

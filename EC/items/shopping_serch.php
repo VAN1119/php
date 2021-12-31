@@ -19,9 +19,8 @@
     </header>
     <nav>
         <ul class="nav">
-            <a href="../user_top.html">トップ画面        </a>
-            <a href="shopping_detail.html">商品詳細</a>
-            <li><a href="shopping_favorite.html">お気に入り</a></li>
+            <a href="user_top.php">トップ画面        </a>
+            <li><a href="shopping_favorite.php">お気に入り</a></li>
             <li>
                 <form action="" method="post">
                     <input type="search" name="search" placeholder="キーワードを入力">

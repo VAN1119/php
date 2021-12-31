@@ -19,8 +19,8 @@
     </header>
     <nav>
         <ul class="nav">
-            <a href="../user_top.html">トップ画面</a>
-            <li><a href="shopping_favorite.html">お気に入り</a></li>
+            <a href="user_top.php">トップ画面        </a>
+            <li><a href="shopping_favorite.php">お気に入り</a></li>
             <li>
                 <form action="" method="post">
                     <input type="search" name="search" placeholder="キーワードを入力">
@@ -51,11 +51,13 @@
             <form method="POST" action="">
             <input class="start_btn buy_btn2" type="submit" name="favorite" value="お気に入りへ追加">
             </form>
-            <a class="start_btn buy_btn2" href="shopping_cart.html">カートへ移動</a>
+            <a class="start_btn buy_btn2" href="shopping_cart.php">カートへ移動</a>
         </div>
+        <p class="ans">
         <?php
         $item_name = "商品名";
         $item_price = 100;
+        $item_pic = "net_shop.png";
         if (isset($_POST["count"])) {
             $count = $_POST["count"];
         }
@@ -74,12 +76,13 @@
         } else {
             $filefavo = "favorite.csv";
             $fp = fopen($filefavo, "a");
-            fwrite($fp, $item_name.",".$item_price.PHP_EOL);
-            // 必要項目：商品名、単価
+            fwrite($fp, $item_name.",".$item_price.",".$item_pic.PHP_EOL);
+            // 必要項目：商品名、単価、商品画像名
             fclose($fp);
             echo "お気に入りへ追加しました。";
         }
         ?>
+        </p>
     </main>
     <footer>
         <small>&copy;2021 Ban</small>
