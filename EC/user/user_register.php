@@ -31,8 +31,6 @@
             </form>
         </div>
         <?php
-        // $id = "";
-        // $pass = "";
         if (isset($_POST["id"])) {
             $id = $_POST["id"];
         }
@@ -40,7 +38,7 @@
             $pass = $_POST["pass"];
         }
         if (!empty($id) && !empty($pass)) {
-            $filename = "user.csv";
+            $filename = "../csv/user.csv";
             $fp = fopen($filename, "a");
             fwrite($fp, $id.",".$pass.PHP_EOL);
             fclose($fp);

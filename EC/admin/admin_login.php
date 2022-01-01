@@ -32,16 +32,14 @@
         </div>
         <p class="ans">
             <?php
-            $id = "";
-            $pass = "";
-            if (!empty($_POST["id"])) {
+            if (isset($_POST["id"])) {
                 $id = $_POST["id"];
             }
-            if (!empty($_POST["pass"])) {
+            if (isset($_POST["pass"])) {
                 $pass = $_POST["pass"];
             }
             if (!empty($id) && !empty($pass)) {
-                $filename = "admin.csv";
+                $filename = "../csv/admin.csv";
                 $lines = file($filename, FILE_IGNORE_NEW_LINES);
                 foreach ($lines as $line) {
                     $users = explode(",", $line);

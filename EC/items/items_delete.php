@@ -38,7 +38,7 @@
         <p class="ans">
         <?php
         $delete = "";
-        $filename = "items.csv";
+        $filename = "../csv/items.csv";
         $lines = file($filename,FILE_IGNORE_NEW_LINES);
         if (isset($_POST["delete"])) {
             $delete = $_POST["delete"];

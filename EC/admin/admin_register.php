@@ -31,20 +31,18 @@
             </form>
         </div>
         <?php
-        $id = "";
-        $pass = "";
-        if (!empty($_POST["id"])) {
+        if (isset($_POST["id"])) {
             $id = $_POST["id"];
         }
-        if (!empty($_POST["pass"])) {
+        if (isset($_POST["pass"])) {
             $pass = $_POST["pass"];
         }
         if (!empty($id) && !empty($pass)) {
-            $filename = "admin.csv";
+            $filename = "../csv/admin.csv";
             $fp = fopen($filename, "a");
             fwrite($fp, $id.",".$pass.PHP_EOL);
             fclose($fp);
-        header("Location:admin_login.php");
+            header("Location:admin_login.php");
         }
         ?>
     </main>

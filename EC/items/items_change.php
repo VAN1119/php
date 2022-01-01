@@ -41,7 +41,7 @@
         </div>
         <p class="ans">
         <?php
-        $filename = "items.csv";
+        $filename = "../csv/items.csv";
         $lines = file($filename,FILE_IGNORE_NEW_LINES);
         $date = date("Y年m月d日 H時i分s秒");
         if (isset($_POST["i_name"])) {

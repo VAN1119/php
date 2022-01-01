@@ -37,8 +37,6 @@
         </div>
         <p class="ans">
             <?php
-            // $id = "";
-            // $pass = "";
             if (isset($_POST["id"])) {
                 $id = $_POST["id"];
             }
@@ -46,12 +44,12 @@
                 $pass = $_POST["pass"];
             }
             if (!empty($id) && !empty($pass)) {
-                $filename = "user.csv";
+                $filename = "../csv/user.csv";
                 $lines = file($filename, FILE_IGNORE_NEW_LINES);
                 foreach ($lines as $line) {
                     $users = explode(",", $line);
                     if ($users[0] == $id && $users[1] == $pass) {
-                        header("Location:../items/user_top.php");
+                        header("Location:user_top.php");
                     }
                 }
                 echo "<br>IDまたはPASSWORD、<br>もしくはその両方が間違っています";
