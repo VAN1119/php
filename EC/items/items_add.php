@@ -31,6 +31,7 @@
             <form method="POST" action="">
                 <div class="login">
                     <p><input type="text" name="i_name" placeholder="商品名" value=""></p>
+                    <p><input type="text" name="i_pic" placeholder="商品画像" value=""></p>
                     <p><input type="text" name="i_comment" placeholder="商品説明" value=""></p>
                     <p><input type="number" name="i_price" placeholder="値段" value=""></p>
                     <p><input type="number" name="i_count" placeholder="在庫数" value=""></p>
@@ -45,6 +46,9 @@
         if (isset($_POST["i_name"])) {
             $i_name = $_POST["i_name"];
         }
+        if (isset($_POST["i_pic"])) {
+            $i_pic = $_POST["i_pic"];
+        }
         if (isset($_POST["i_comment"])) {
             $i_comment = $_POST["i_comment"];
         }
@@ -54,25 +58,33 @@
         if (isset($_POST["i_count"])) {
             $i_count = $_POST["i_count"];
         }
-        if (!empty($i_name) && !empty($i_comment) && !empty($i_price) && !empty($i_count)) {
+        if (!empty($i_name) && !empty($i_pic) && !empty($i_comment) && !empty($i_price) && !empty($i_count)) {
             // 投稿番号取得
             if(file_exists($filename)){
                 $i = 1001;
+                $max = $i;
                 $lines = file($filename);
-                for ($k = 0; $k < count($lines); $k++) {
+                foreach ($lines as $line) {
+                    $array = explode(",", $line);
+                    if ($array[0] >= $max) {
+                        $max = $array[0] + 1;
+                    }
+                    $i = $max;
+                }
+                /* for ($k = 0; $k < count($lines); $k++) {
                     $line = explode(",", $lines[$k]);
-                    $max = $line[0];
+                    $max = $line[0]; 
                     if ($line[0] >= $max) {
                         $max = $line[0] + 1;
                     }
                     $i = $max;
-                }
+                } */
             } else {
                 $i = 1001;
             }
             // ファイル処理
             $fp = fopen($filename, "a");
-            fwrite($fp, $i.",".$i_name.",".$i_comment.",".$i_price.",".$i_count.","."1".","."5".",".$date.PHP_EOL);
+            fwrite($fp, $i.",".$i_name.",".$i_pic.",".$i_comment.",".$i_price.",".$i_count.","."1".","."5".",".$date.PHP_EOL);
             fclose($fp);
             echo "商品追加しました。<br><br>";
         }
@@ -83,7 +95,7 @@
             $lines = file($filename,FILE_IGNORE_NEW_LINES);
             foreach($lines as $line){
                 $array = explode(",", $line);
-                echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[2]." 金額:".$array[3]." 在庫:".$array[4]."<br>";
+                echo "番号:".$array[0]." 品名:".$array[1]." 画像:".$array[2]." 説明:".$array[3]." 金額:".$array[4]." 在庫:".$array[5]."<br>";
             }
         }
         ?>

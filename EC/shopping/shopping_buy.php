@@ -32,23 +32,26 @@
     <main>
         <div class="cover">
             <h2>購入画面</h2>
-            <p>ご購入ありがとうございました。</p>
-            <hr>
             <?php
             $filename = "../csv/items.csv";
             $filecart = "../csv/cart.csv";
             $total = 0;
-            if(file_exists($filecart)){
-                $clines = file($filecart,FILE_IGNORE_NEW_LINES);
-                foreach($clines as $cline){
-                    $array = explode(",", $cline);
-                    echo "商品名:".$array[1]." 数量:".$array[0]." 単価:".$array[2]." 合計金額:".$array[0] * $array[2]."円<br>";
-                    $total += $array[0] * $array[2];
-                }
+            $clines = file($filecart,FILE_IGNORE_NEW_LINES);
+            foreach($clines as $cline){
+                $array = explode(",", $cline);
+                echo "商品名:".$array[1]." 数量:".$array[9]." 単価:".$array[4]." 合計金額:".$array[9] * $array[4]."円<br>";
+                $total += $array[9] * $array[4];
+            }
+            $fpc = fopen($filecart, "w");
+            fclose($fpc);
+            if ($total > 0) {
+                echo "<br>ご購入ありがとうございました。<br>";
+            } else {
+                echo "<br>商品を選択してください。<br>";
             }
             ?>
             <hr>
-            <p>購入金額:<?php echo $total; ?>円</p>
+            <p class="total_price">購入金額:<?php echo $total; ?>円</p>
         </div>
     </main>
     <footer>

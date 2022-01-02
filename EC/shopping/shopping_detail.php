@@ -55,19 +55,30 @@
         </div>
         <p class="ans">
         <?php
-        $item_name = "商品名";
-        $item_price = 100;
-        $item_pic = "net_shop.png";
+        $item_num = 1001;
+        $item_pic = "net_shop.png"; // picは後でitems.csvの項目に入れる
+        $filename = "../csv/items.csv";
+        $lines = file($filename);
+        $i;
+        for ($k = 0; $k < count($lines); $k++) {
+            $array = explode(",", $lines[$k]);
+            if ($item_num == $array[0]) {
+                $i = $k;
+            }
+        }
+        // lines[i]を改行を削除して変数に代入
+        $item_info = str_replace(PHP_EOL, '', $lines[$i]);
+        // echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[2]." 金額:".$array[3]." 在庫:".$array[4]."<br>";
         if (isset($_POST["count"])) {
             $count = $_POST["count"];
         }
         if (isset($_POST["favorite"])) {
-            $favorite = "お気に入りへ登録しました。";
+            $favorite = "お気に入り";
         }
         if (!empty($count)) {
             $filecart = "../csv/cart.csv";
             $fp = fopen($filecart, "a");
-            fwrite($fp, $count.",".$item_name.",".$item_price.PHP_EOL);
+            fwrite($fp, $item_info.",".$count.PHP_EOL);
             // 必要項目：数量、商品名、単価
             fclose($fp);
             echo "カートへ追加しました。";
@@ -76,7 +87,7 @@
         } else {
             $filefavo = "../csv/favorite.csv";
             $fp = fopen($filefavo, "a");
-            fwrite($fp, $item_name.",".$item_price.",".$item_pic.PHP_EOL);
+            fwrite($fp, $item_info.PHP_EOL);
             // 必要項目：商品名、単価、商品画像名
             fclose($fp);
             echo "お気に入りへ追加しました。";

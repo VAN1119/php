@@ -39,8 +39,8 @@
                 $clines = file($filecart,FILE_IGNORE_NEW_LINES);
                 foreach($clines as $cline){
                     $array = explode(",", $cline);
-                    echo "商品名:".$array[1]." 数量:".$array[0]." 単価:".$array[2]." 合計金額:".$array[0] * $array[2]."円<br>";
-                    $total += $array[0] * $array[2];
+                    echo "商品名:".$array[1]." 数量:".$array[9]." 単価:".$array[4]." 合計金額:".$array[9] * $array[4]."円<br>";
+                    $total += $array[9] * $array[4];
                 }
             }
             ?>

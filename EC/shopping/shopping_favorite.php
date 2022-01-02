@@ -43,7 +43,7 @@
                     ?>
                     <a href="shopping_detail.php"><img class="" src="../images/<?php echo $array[2]?>" alt="表示例" width="200px">
                     <?php
-                    echo "商品名:".$array[0]."<br> 金額:".$array[1]."円";
+                    echo "商品名:".$array[1]."<br> 金額:".$array[4]."円";
                 }
             } else {
                 echo "お気に入りに登録している商品はありません";
