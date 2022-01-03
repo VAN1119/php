@@ -32,6 +32,7 @@
                 <form method="POST" action="">
                     <p><input type="number" name="edit" placeholder="編集番号" value=""></p>
                     <p><input type="text" name="i_name" placeholder="商品名" value=""></p>
+                    <p><input type="text" name="i_pic" placeholder="商品画像" value=""></p>
                     <p><input type="text" name="i_comment" placeholder="商品説明" value=""></p>
                     <p><input type="number" name="i_price" placeholder="値段" value=""></p>
                     <p><input type="number" name="i_count" placeholder="在庫数" value=""></p>
@@ -46,6 +47,9 @@
         $date = date("Y年m月d日 H時i分s秒");
         if (isset($_POST["i_name"])) {
             $i_name = $_POST["i_name"];
+        }
+        if (isset($_POST["i_pic"])) {
+            $i_pic = $_POST["i_pic"];
         }
         if (isset($_POST["i_comment"])) {
             $i_comment = $_POST["i_comment"];
@@ -88,7 +92,7 @@
                 if ($enum != $edit){
                     fwrite($fp, $lines[$i].PHP_EOL);
                 } else {
-                    fwrite($fp, $edit.",".$i_name.",".$i_comment.",".$i_price.",".$i_count.","."1".","."5".",".$date.PHP_EOL);
+                    fwrite($fp, $edit.",".$i_name.",".$i_pic.",".$i_comment.",".$i_price.",".$i_count.","."1".","."5".",".$date.PHP_EOL);
                     $flag = 1;
                 }
             }
@@ -108,7 +112,7 @@
             $lines = file($filename,FILE_IGNORE_NEW_LINES);
             foreach($lines as $line){
                 $array = explode(",", $line);
-                echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[2]." 金額:".$array[3]." 在庫:".$array[4]."<br>";
+                echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[3]." 金額:".$array[4]." 在庫:".$array[5]."<br>";
             }
         }
         ?>

@@ -35,13 +35,28 @@
             <?php
             $filename = "../csv/items.csv";
             $filecart = "../csv/cart.csv";
-            $total = 0;
+            $ilines = file($filename,FILE_IGNORE_NEW_LINES);
             $clines = file($filecart,FILE_IGNORE_NEW_LINES);
-            foreach($clines as $cline){
-                $array = explode(",", $cline);
-                echo "商品名:".$array[1]." 数量:".$array[9]." 単価:".$array[4]." 合計金額:".$array[9] * $array[4]."円<br>";
-                $total += $array[9] * $array[4];
+            $total = 0;
+            $fpi = fopen($filename, "w");
+            foreach ($clines as $cline) {
+                $c_array = explode(",", $cline);
+                echo "商品名:".$c_array[1]." 数量:".$c_array[9]." 単価:".$c_array[4]." 合計金額:".$c_array[9] * $c_array[4]."円<br>";
+                $total += $c_array[9] * $c_array[4];
+                foreach ($ilines as $iline) {
+                    $i_array = explode(",", $iline);
+                    $i = 0;
+                    if ($c_array[0] != $i_array[0]) {
+                        fwrite($fpi, $i_array[0].",".$i_array[1].",".$i_array[2].",".$i_array[3].",".$i_array[4].",".$i_array[5].",".$i_array[6].",".$i_array[7].",".$i_array[8].PHP_EOL);
+                        $i++;
+                        echo $iline[$i];
+                    } else {
+                        fwrite($fpi, $i_array[0].",".$i_array[1].",".$i_array[2].",".$i_array[3].",".$i_array[4].",".$i_array[5] - $c_array[9].",".$i_array[6].",".$i_array[7].",".$i_array[8].PHP_EOL);
+                        $i++;
+                    }
+                }
             }
+            fclose($fpi);
             $fpc = fopen($filecart, "w");
             fclose($fpc);
             if ($total > 0) {

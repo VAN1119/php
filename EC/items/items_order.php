@@ -55,7 +55,7 @@
                 $onum = $line[0];
                 if ($onum == $order){
                     $flag = 1;
-                    fwrite($fp, $line[0].",".$line[1].",".$line[2].",".$line[3].",".$line[4] + $o_count.",".$line[5].",".$line[6].",".$date.PHP_EOL);
+                    fwrite($fp, $line[0].",".$line[1].",".$line[2].",".$line[3].",".$line[4].",".$line[5] + $o_count.",".$line[6].",".$line[7].",".$date.PHP_EOL);
                 } else {
                     fwrite($fp, $lines[$k].PHP_EOL);
                 }
@@ -75,7 +75,7 @@
             $lines = file($filename,FILE_IGNORE_NEW_LINES);
             foreach($lines as $line){
                 $array = explode(",", $line);
-                echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[2]." 金額:".$array[3]." 在庫:".$array[4]."<br>";
+                echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[3]." 金額:".$array[4]." 在庫:".$array[5]."<br>";
             }
         }
         ?>
