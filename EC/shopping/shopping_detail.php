@@ -55,7 +55,7 @@
         </div>
         <p class="ans">
         <?php
-        $item_num = 1001;
+        $item_num = 1002;
         $item_pic = "net_shop.png"; // picは後でitems.csvの項目に入れる
         $filename = "../csv/items.csv";
         $lines = file($filename);

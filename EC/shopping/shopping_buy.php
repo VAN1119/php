@@ -43,15 +43,15 @@
                 $c_array = explode(",", $cline);
                 echo "商品名:".$c_array[1]." 数量:".$c_array[9]." 単価:".$c_array[4]." 合計金額:".$c_array[9] * $c_array[4]."円<br>";
                 $total += $c_array[9] * $c_array[4];
+                $i = 0;
                 foreach ($ilines as $iline) {
                     $i_array = explode(",", $iline);
-                    $i = 0;
+                    // カート内商品番号とアイテム番号が一致した時に在庫を引いて、総売り上げを足す
                     if ($c_array[0] != $i_array[0]) {
-                        fwrite($fpi, $i_array[0].",".$i_array[1].",".$i_array[2].",".$i_array[3].",".$i_array[4].",".$i_array[5].",".$i_array[6].",".$i_array[7].",".$i_array[8].PHP_EOL);
+                        fwrite($fpi, $ilines[$i].PHP_EOL);
                         $i++;
-                        echo $iline[$i];
                     } else {
-                        fwrite($fpi, $i_array[0].",".$i_array[1].",".$i_array[2].",".$i_array[3].",".$i_array[4].",".$i_array[5] - $c_array[9].",".$i_array[6].",".$i_array[7].",".$i_array[8].PHP_EOL);
+                        fwrite($fpi, $i_array[0].",".$i_array[1].",".$i_array[2].",".$i_array[3].",".$i_array[4].",".$i_array[5] - $c_array[9].",".$i_array[6] + $c_array[9].",".$i_array[7].",".$i_array[8].PHP_EOL);
                         $i++;
                     }
                 }

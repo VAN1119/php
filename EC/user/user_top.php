@@ -29,18 +29,36 @@
         </ul>
     </nav>
     <main>
-        <h2>売れ筋商品</h2>
-        <a href="../shopping/shopping_detail.php"><img src="../images/game_reversi_board.png" alt="オセロ" width="200px"></a>
-        <a href="../shopping/shopping_detail.php"><img src="../images/kandume_kuuki_close.png" alt="空気" width="200px"></a>
-        <a href="../shopping/shopping_detail.php"><img src="../images/megane_3d_blue_red.png" alt="3Dメガネ" width="200px"></a>
-        <a href="../shopping/shopping_detail.php"><img src="../images/omen_tengu.png" alt="天狗" width="200px"></a>
-        <a href="../shopping/shopping_detail.php"><img src="../images/origami_kamideppou.png" alt="紙" width="200px"></a>
-        <a href="../shopping/shopping_detail.php"><img src="../images/science_kessyou_kouzou_mokei.png" alt="" width="200px"></a>
-        <a href="../shopping/shopping_detail.php"><img src="../images/toy_dorodango.png" alt="キレイな泥団子" width="200px"></a>
-        <a href="../shopping/shopping_detail.php"><img src="../images/toy_dorodango_kirei.png" alt="泥団子" width="200px"></a>
-        <a href="../shopping/shopping_detail.php"><img src="../images/toy_glass_dome.png" alt="ガラスケース" width="200px"></a>
-        <a href="../shopping/shopping_detail.php"><img src="../images/toy_kibori_kuma.png" alt="クマ" width="200px"></a>
+        <?php
+        $filename = "../csv/items.csv";
+        $lines = file($filename,FILE_IGNORE_NEW_LINES);
+        $top_salse = array();
+        $top = array();
+        for ($i = 0; $i < 3; $i++) {
+            $top_salse[$i] = 0;
+        }
+        // 大きい順ならいいけど、そうじゃない場合はMAXを探す方法にしないとダメ、なんか違う。また後日1/4
+        for ($j = 0; $j < count($lines); $j++) {
+            $array = explode(",", $lines[$j]);
+            if ($top_salse[0] < $array[6]) {
+                $top_salse[1] = $top_salse[0];
+                $top_salse[0] = $array[6];
+                $top[0] = $array[2];
+            } else if ($top_salse[1] < $array[6]) {
+                $top_salse[2] = $top_salse[1];
+                $top_salse[1] = $array[6];
+                $top[1] = $array[2];
+            } else if ($top_salse[2] < $array[6]) {
+                $top_salse[2] = $array[6];
+                $top[2] = $array[2];
+            }
+        }
+        ?>
         <div class="cover">
+        <h2>売れ筋商品</h2>
+        <a href="../shopping/shopping_detail.php"><img src="../images/<?php echo $top[0]; ?>" alt="" width="200px"></a>
+        <a href="../shopping/shopping_detail.php"><img src="../images/<?php echo $top[1]; ?>" alt="" width="200px"></a>
+        <a href="../shopping/shopping_detail.php"><img src="../images/<?php echo $top[2]; ?>" alt="" width="200px"></a>
         </div>
     </main>
     <footer>
