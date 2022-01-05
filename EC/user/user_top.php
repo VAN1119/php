@@ -43,22 +43,25 @@
             if ($top_salse[0] < $array[6]) {
                 $top_salse[1] = $top_salse[0];
                 $top_salse[0] = $array[6];
-                $top[0] = $array[2];
+                $top[0][0] = $array[0];
+                $top[0][1] = $array[2];
             } else if ($top_salse[1] < $array[6]) {
                 $top_salse[2] = $top_salse[1];
                 $top_salse[1] = $array[6];
-                $top[1] = $array[2];
+                $top[1][0] = $array[0];
+                $top[1][1] = $array[2];
             } else if ($top_salse[2] < $array[6]) {
                 $top_salse[2] = $array[6];
-                $top[2] = $array[2];
+                $top[2][0] = $array[0];
+                $top[2][1] = $array[2];
             }
         }
         ?>
         <div class="cover">
         <h2>売れ筋商品</h2>
-        <a href="../shopping/shopping_detail.php"><img src="../images/<?php echo $top[0]; ?>" alt="" width="200px"></a>
-        <a href="../shopping/shopping_detail.php"><img src="../images/<?php echo $top[1]; ?>" alt="" width="200px"></a>
-        <a href="../shopping/shopping_detail.php"><img src="../images/<?php echo $top[2]; ?>" alt="" width="200px"></a>
+        <a href="../shopping/detail/<?php echo $top[0][0] ?>.php"><img src="../images/<?php echo $top[0][1]; ?>" alt="" width="200px"></a>
+        <a href="../shopping/detail/<?php echo $top[1][0] ?>.php"><img src="../images/<?php echo $top[1][1]; ?>" alt="" width="200px"></a>
+        <a href="../shopping/detail/<?php echo $top[2][0] ?>.php"><img src="../images/<?php echo $top[2][1]; ?>" alt="" width="200px"></a>
         </div>
     </main>
     <footer>
