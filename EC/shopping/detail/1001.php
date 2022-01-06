@@ -20,7 +20,7 @@
     <nav>
         <ul class="nav">
             <a href="../../user/user_top.php">トップ画面        </a>
-            <li><a href="shopping_favorite.php">お気に入り</a></li>
+            <li><a href="../shopping_favorite.php">お気に入り</a></li>
             <li>
                 <form action="" method="post">
                     <input type="search" name="search" placeholder="キーワードを入力">
@@ -30,15 +30,32 @@
         </ul>
     </nav>
     <main>
+        <?php
+        $item_num = 1001;
+        $filename = "../../csv/items.csv";
+        $lines = file($filename);
+        $i;
+        for ($k = 0; $k < count($lines); $k++) {
+            $array = explode(",", $lines[$k]);
+            if ($item_num == $array[0]) {
+                $i = $k;
+                $item_name = $array[1];
+                $item_pic = $array[2];
+                $item_com = $array[3];
+                $item_price = $array[4];
+            }
+        }
+
+        ?>
         <div class="cover">
             <h2>商品詳細画面</h2>
         </div>
         <div class="item_explain">
-            <img class="item_img" src="../../images/net_shop.png" alt="表示例" width="200px">
+            <img class="item_img" src="../../images/<?php echo $item_pic ?>" alt="表示例" width="200px">
             <div class="item_word">
-                <p class="item_name">アイテム名</p>
-                <p class="item_comment">1行目説明文説明文説明文説明文説明文説明文説明文説明文説明文<br>2行目説明文説明文説明文説明文説明文説明文説明文説明文説明文<br>3行目説明文説明文説明文説明文説明文説明文説明文説明文説明文</p>
-                <p class="item_price">￥￥￥,￥￥￥円</p>
+                <p class="item_name"><?php echo $item_name ?></p>
+                <p class="item_comment"><?php echo $item_com ?><br>2行目説明文説明文説明文説明文説明文説明文説明文説明文説明文<br>3行目説明文説明文説明文説明文説明文説明文説明文説明文説明文</p>
+                <p class="item_price"><?php echo $item_price ?>円</p>
             </div>
         </div>
         <div class="buy_btn">
@@ -51,21 +68,10 @@
             <form method="POST" action="">
             <input class="start_btn buy_btn2" type="submit" name="favorite" value="お気に入りへ追加">
             </form>
-            <a class="start_btn buy_btn2" href="shopping_cart.php">カートへ移動</a>
+            <a class="start_btn buy_btn2" href="../shopping_cart.php">カートへ移動</a>
         </div>
         <p class="ans">
         <?php
-        $item_num = 1002;
-        $item_pic = "net_shop.png"; // picは後でitems.csvの項目に入れる
-        $filename = "../../csv/items.csv";
-        $lines = file($filename);
-        $i;
-        for ($k = 0; $k < count($lines); $k++) {
-            $array = explode(",", $lines[$k]);
-            if ($item_num == $array[0]) {
-                $i = $k;
-            }
-        }
         // lines[i]を改行を削除して変数に代入
         $item_info = str_replace(PHP_EOL, '', $lines[$i]);
         // echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[2]." 金額:".$array[3]." 在庫:".$array[4]."<br>";

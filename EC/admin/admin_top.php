@@ -31,7 +31,7 @@
             <a class="start_btn buy_btn2" href="../items/items_order.php">商品発注</a>
         </div>
         <div class="buy_btn">
-            <a class="start_btn buy_btn2" href="admin_register.php">新規登録</a>
+            <a class="start_btn buy_btn2" href="admin_register.php">管理者登録</a>
         </div>
     </main>
     <footer>

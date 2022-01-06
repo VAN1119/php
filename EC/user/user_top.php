@@ -19,7 +19,7 @@
     </header>
     <nav>
         <ul class="nav">
-            <li><a href="shopping_favorite.php">お気に入り</a></li>
+            <li><a href="../shopping/shopping_favorite.php">お気に入り</a></li>
             <li>
                 <form action="" method="post">
                     <input type="search" name="search" placeholder="アイテムを探す">

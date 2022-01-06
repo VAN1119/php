@@ -41,7 +41,7 @@
                 foreach($flines as $fline){
                     $array = explode(",", $fline);
                     ?>
-                    <a href="shopping_detail.php"><img class="" src="../images/<?php echo $array[2]?>" alt="表示例" width="200px">
+                    <a href="detail/<?php echo $array[0] ?>.php"><img class="" src="../images/<?php echo $array[2]?>" alt="表示例" width="200px">
                     <?php
                     echo "商品名:".$array[1]."<br> 金額:".$array[4]."円";
                 }
