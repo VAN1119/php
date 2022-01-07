@@ -112,7 +112,7 @@
             $lines = file($filename,FILE_IGNORE_NEW_LINES);
             foreach($lines as $line){
                 $array = explode(",", $line);
-                echo "番号:".$array[0]." 品名:".$array[1]." 説明:".$array[3]." 金額:".$array[4]." 在庫:".$array[5]."<br>";
+                echo "番号:".$array[0]." 品名:".$array[1]." 画像:".$array[2]." 説明:".$array[3]." 金額:".$array[4]." 在庫:".$array[5]."<br>";
             }
         }
         ?>

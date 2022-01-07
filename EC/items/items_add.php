@@ -84,7 +84,7 @@
             }
             // ファイル処理
             $fp = fopen($filename, "a");
-            fwrite($fp, $i.",".$i_name.",".$i_pic.",".$i_comment.",".$i_price.",".$i_count.","."1".","."5".",".$date.PHP_EOL);
+            fwrite($fp, $i.",".$i_name.",".$i_pic.",".$i_comment.",".$i_price.",".$i_count.","."0".","."5".",".$date.PHP_EOL);
             fclose($fp);
             echo "商品追加しました。<br><br>";
         }

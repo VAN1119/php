@@ -33,17 +33,17 @@
         <div class="cover">
             <h2>購入画面</h2>
             <?php
-            $filename = "../csv/items.csv";
             $filecart = "../csv/cart.csv";
-            $ilines = file($filename,FILE_IGNORE_NEW_LINES);
             $clines = file($filecart,FILE_IGNORE_NEW_LINES);
             $total = 0;
-            $fpi = fopen($filename, "w");
             foreach ($clines as $cline) {
                 $c_array = explode(",", $cline);
                 echo "商品名:".$c_array[1]." 数量:".$c_array[9]." 単価:".$c_array[4]." 合計金額:".$c_array[9] * $c_array[4]."円<br>";
                 $total += $c_array[9] * $c_array[4];
                 $i = 0;
+                $filename = "../csv/items.csv";
+                $ilines = file($filename,FILE_IGNORE_NEW_LINES);
+                $fpi = fopen($filename, "w");
                 foreach ($ilines as $iline) {
                     $i_array = explode(",", $iline);
                     // カート内商品番号とアイテム番号が一致した時に在庫を引いて、総売り上げを足す
@@ -55,8 +55,8 @@
                         $i++;
                     }
                 }
+                fclose($fpi);
             }
-            fclose($fpi);
             $fpc = fopen($filecart, "w");
             fclose($fpc);
             if ($total > 0) {
