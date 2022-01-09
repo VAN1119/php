@@ -44,10 +44,9 @@
         foreach ($lines as $line) {
             $array = explode(",", $line);
             $max1[] = $array[6];
-            echo $array[6].",";
         }
-        $top[0][0] = max(array_keys($max1)) - 1;
-        echo $top[0][0]."です";
+        $a = array_keys($max1, max($max1));
+        $top[0][0] = $a[0];
         for ($j = 0; $j < count($lines); $j++) {
             $array = explode(",", $lines[$j]);
             if ($j == $top[0][0]) {
@@ -55,13 +54,9 @@
             } else {
                 $max2[] = $array[6];
             }
-            echo $max2[$j].",";
         }
-        foreach ($max2 as $m) {
-            echo $m;
-        }
-        $top[1][0] = max(array_keys($max2)) - 1;
-        echo $top[1][0]."です";
+        $b = array_keys($max2, max($max2));
+        $top[1][0] = $b[0];
         for ($k = 0; $k < count($lines); $k++) {
             $array = explode(",", $lines[$k]);
             if ($k == $top[0][0] || $k == $top[1][0]) {
@@ -69,10 +64,10 @@
             } else {
                 $max3[] = $array[6];
             }
-            echo $array[6].",";
         }
-        $top[2][0] = max(array_keys($max3)) - 1;
-        echo $top[2][0]."です";
+        // max3の中で最大値のキー(配列名)を取得(max(array_keys(配列))にすると最大の配列の最大値を取得してしまう)
+        $c = array_keys($max3, max($max3));
+        $top[2][0] = $c[0];
         // 1番目に売上が大きい商品番号
         $array = explode(",",$lines[$top[0][0]]);
         $top[0][1] = $array[0];

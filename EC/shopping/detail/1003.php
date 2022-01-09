@@ -54,7 +54,7 @@
             <img class="item_img" src="../../images/<?php echo $item_pic ?>" alt="表示例" width="200px">
             <div class="item_word">
                 <p class="item_name"><?php echo $item_name ?></p>
-                <p class="item_comment"><?php echo $item_com ?><br>2行目説明文説明文説明文説明文説明文説明文説明文説明文説明文<br>3行目説明文説明文説明文説明文説明文説明文説明文説明文説明文</p>
+                <p class="item_comment">【商品説明】<br><?php echo $item_com ?><br>2行目説明文説明文説明文説明文説明文説明文説明文説明文説明文</p>
                 <p class="item_price"><?php echo $item_price ?>円</p>
             </div>
         </div>

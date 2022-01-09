@@ -32,6 +32,7 @@
     <main>
         <div class="cover">
             <h2>お気に入り画面</h2>
+            <form action="" method="POST">
             <div class="item_favorite">
             <?php
             $filefavo = "../csv/favorite.csv";
@@ -41,15 +42,19 @@
                 foreach($flines as $fline){
                     $array = explode(",", $fline);
                     ?>
-                    <a href="detail/<?php echo $array[0] ?>.php"><img class="" src="../images/<?php echo $array[2]?>" alt="表示例" width="200px">
+                    <div class="favo">
+                    <p><a href="detail/<?php echo $array[0] ?>.php"><img class="" src="../images/<?php echo $array[2]?>" alt="表示例" width="200px"></a></p>
+                    <p>商品名:<?php echo $array[1]; ?><br>金額:<?php echo $array[4]; ?>円</p>
+                    <input type="checkbox" name="delete[]" value="<?php echo $array[0]; ?>">
+                    </div>
                     <?php
-                    echo "商品名:".$array[1]."<br> 金額:".$array[4]."円";
                 }
             } else {
                 echo "お気に入りに登録している商品はありません";
             }
             ?>
             </div>
+            <input type="submit" value="削除">
         </div>
     </main>
     <footer>
