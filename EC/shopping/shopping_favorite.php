@@ -36,9 +36,9 @@
             <div class="item_favorite">
             <?php
             $filefavo = "../csv/favorite.csv";
+            $flines = file($filefavo,FILE_IGNORE_NEW_LINES);
             $total = 0;
-            if(file_exists($filefavo)){
-                $flines = file($filefavo,FILE_IGNORE_NEW_LINES);
+            if(count($flines) > 0){
                 foreach($flines as $fline){
                     $array = explode(",", $fline);
                     ?>
@@ -49,12 +49,32 @@
                     </div>
                     <?php
                 }
+                if (isset($_POST["delete"])) {
+                    $delete = $_POST['delete'];
+                }
+                if (!empty($delete)) {
+                    $fp = fopen($filefavo, "w");
+                    for ($i = 0; $i <= count($delete); $i++) {
+                        $array = explode(",", $flines[$i]);
+                        if ($delete[0] != $array[0]) {
+                            fwrite($fp, $flines[$i]);
+                            echo "成功？";
+                        } else {
+                            echo "失敗";
+                            echo $array[0];
+                            echo $delete[0];
+                        }
+                    }
+                    fclose($fp);
+                }
+                ?>
+                </div>
+                <input type="submit" value="削除">
+                <?php
             } else {
                 echo "お気に入りに登録している商品はありません";
             }
             ?>
-            </div>
-            <input type="submit" value="削除">
         </div>
     </main>
     <footer>
