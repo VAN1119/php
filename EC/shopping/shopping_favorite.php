@@ -52,19 +52,33 @@
                 if (isset($_POST["delete"])) {
                     $delete = $_POST['delete'];
                 }
+                // deleteが$kの時にファイル分を確認する方法
                 if (!empty($delete)) {
                     $fp = fopen($filefavo, "w");
-                    for ($i = 0; $i <= count($delete); $i++) {
-                        $array = explode(",", $flines[$i]);
-                        if ($delete[0] != $array[0]) {
-                            fwrite($fp, $flines[$i]);
-                            echo "成功？";
+                    $k = 0;
+                    foreach ($flines as $fline) {
+                        $darray = explode(",", $fline);
+                        if ($delete[0] != $darray[0]) {
+                            fwrite($fp, $flines[$k].PHP_EOL);
+                            $k++;
                         } else {
-                            echo "失敗";
-                            echo $array[0];
-                            echo $delete[0];
+                            $k++;
                         }
-                    }
+                    } 
+                    /* for ($i = 0; $i <= count($flines); $i++) {
+                        $array[] = explode(",", $flines[$i]);
+                        if ($delete[$i] != $array[0]) {
+                            fwrite($fp, $flines[$i]);
+                            echo "登録".$flines[$i];
+                            echo "[";
+                            var_dump($flines[$i]);
+                            echo "]";
+                        } else {
+                            echo "消去";
+                            echo $array[0];
+                            echo $delete[$i];
+                        }
+                    } */
                     fclose($fp);
                 }
                 ?>
