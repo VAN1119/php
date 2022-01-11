@@ -26,6 +26,32 @@
                     <input type="search" name="search" placeholder="キーワードを入力">
                     <input type="submit" name="submit" value="検索">
                 </form>
+                <?php
+                if (isset($_POST["search"])) {
+                    $searc = $_POST['search'];
+                    $search = '/'.$searc.'/';
+                }
+                if (!empty($search)) {
+                    $fileitems = "../csv/items.csv";
+                    $ilines = file($fileitems,FILE_IGNORE_NEW_LINES);
+                    $filesearch = "../csv/search.csv";
+                    $sfp = fopen($filesearch, "w");
+                    $sflag = 0;
+                    foreach ($ilines as $iline) {
+                        $iarray = explode(",", $iline);
+                        if (preg_match($search, $iarray[1])) {
+                            fwrite($sfp, $iline.PHP_EOL);
+                            $sflag = 1;
+                        }
+                    }
+                    if ($sflag == 1) {
+                        header("Location:shopping_search.php");
+                    } else {
+                        echo "お探しの商品は見つかりませんでした。";
+                    }
+                    fclose($sfp);
+                }
+                ?>
             </li>
         </ul>
     </nav>
@@ -58,28 +84,21 @@
                     $k = 0;
                     foreach ($flines as $fline) {
                         $darray = explode(",", $fline);
-                        if ($delete[0] != $darray[0]) {
+                        $flag = 0;
+                        foreach ($delete as $dele) {
+                            if ($dele == $darray[0]) {
+                                $flag = 1;
+                            }
+                        }
+                        if ($flag == 0) {
                             fwrite($fp, $flines[$k].PHP_EOL);
                             $k++;
                         } else {
                             $k++;
                         }
-                    } 
-                    /* for ($i = 0; $i <= count($flines); $i++) {
-                        $array[] = explode(",", $flines[$i]);
-                        if ($delete[$i] != $array[0]) {
-                            fwrite($fp, $flines[$i]);
-                            echo "登録".$flines[$i];
-                            echo "[";
-                            var_dump($flines[$i]);
-                            echo "]";
-                        } else {
-                            echo "消去";
-                            echo $array[0];
-                            echo $delete[$i];
-                        }
-                    } */
+                    }
                     fclose($fp);
+                    header("Location:#");
                 }
                 ?>
                 </div>

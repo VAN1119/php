@@ -26,6 +26,26 @@
                     <input type="search" name="search" placeholder="キーワードを入力">
                     <input type="submit" name="submit" value="検索">
                 </form>
+                <?php
+                $fileitems = "../csv/items.csv";
+                $ilines = file($fileitems,FILE_IGNORE_NEW_LINES);
+                $fileserch = "../csv/serch.csv";
+                $sfp = fopen($fileserch, "w");
+                $sflag = 0;
+                foreach ($ilines as $iline) {
+                    $iarray = explode(",", $iline);
+                    if (preg_match($search, $iarray[1])) {
+                        fwrite($fp, $ilines.PHP_EOL);
+                        $sflag = 1;
+                    }
+                }
+                if ($sflag == 1) {
+                    header("Location:shopping_serch.php");
+                } else {
+                    echo "お探しの商品は見つかりませんでした。";
+                }
+                fclose($fp);
+                ?>
             </li>
         </ul>
     </nav>
