@@ -63,15 +63,14 @@
             <?php
             $filefavo = "../csv/favorite.csv";
             $flines = file($filefavo,FILE_IGNORE_NEW_LINES);
-            $total = 0;
             if(count($flines) > 0){
                 foreach($flines as $fline){
                     $array = explode(",", $fline);
                     ?>
                     <div class="favo">
-                    <p><a href="detail/<?php echo $array[0] ?>.php"><img class="" src="../images/<?php echo $array[2]?>" alt="表示例" width="200px"></a></p>
-                    <p>商品名:<?php echo $array[1]; ?><br>金額:<?php echo $array[4]; ?>円</p>
-                    <input type="checkbox" name="delete[]" value="<?php echo $array[0]; ?>">
+                        <p><a href="detail/<?php echo $array[0] ?>.php"><img class="" src="../images/<?php echo $array[2]?>" alt="表示例" width="200px"></a></p>
+                        <p>商品名:<?php echo $array[1]; ?><br>金額:<?php echo $array[4]; ?>円</p>
+                        <input type="checkbox" name="delete[]" value="<?php echo $array[0]; ?>">
                     </div>
                     <?php
                 }

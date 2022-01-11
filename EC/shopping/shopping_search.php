@@ -33,6 +33,21 @@
         <div class="cover">
             <h2>検索画面</h2>
             <p>検索結果一覧</p>
+            <div class="item_favorite">
+            <?php
+            $filesearch = "../csv/search.csv";
+            $slines = file($filesearch ,FILE_IGNORE_NEW_LINES);
+            foreach($slines as $sline){
+                $array = explode(",", $sline);
+                ?>
+                <div class="favo">
+                        <p><a href="detail/<?php echo $array[0] ?>.php"><img class="" src="../images/<?php echo $array[2]?>" alt="表示例" width="200px"></a></p>
+                        <p>商品名:<?php echo $array[1]; ?><br>金額:<?php echo $array[4]; ?>円</p>
+                </div>
+                <?php
+            }
+            ?>
+            </div>
         </div>
     </main>
     <footer>
