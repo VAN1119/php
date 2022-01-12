@@ -23,8 +23,8 @@
             <li><a href="../shopping_favorite.php">お気に入り</a></li>
             <li>
                 <form action="" method="post">
-                    <input type="search" name="search" placeholder="キーワードを入力">
-                    <input type="submit" name="submit" value="検索">
+                    <input type="search" name="search" placeholder="アイテムを探す">
+                    <input type="image" src="../../images/search_mushimegane.png" width="25px"name="image" tabindex="1" value="検索">
                 </form>
                 <?php
                 if (isset($_POST["search"])) {
@@ -77,7 +77,7 @@
             <h2>商品詳細画面</h2>
         </div>
         <div class="item_explain">
-            <img class="item_img" src="../../images/<?php echo $item_pic ?>" alt="表示例" width="200px">
+            <img class="item_img" src="../../images/<?php echo $item_pic ?>.png" alt="表示例" width="200px">
             <div class="item_word">
                 <p class="item_name"><?php echo $item_name ?></p>
                 <p class="item_comment">【商品説明】<br><?php echo $item_com ?><br>2行目説明文説明文説明文説明文説明文説明文説明文説明文説明文</p>

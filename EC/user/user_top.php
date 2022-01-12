@@ -23,7 +23,7 @@
             <li>
                 <form action="" method="post">
                     <input type="search" name="search" placeholder="アイテムを探す">
-                    <input type="image" name="image" tabindex="1" value="検索">
+                    <input type="image" src="../images/search_mushimegane.png" width="25px"name="image" tabindex="1" value="検索">
                 </form>
                 <?php
                 if (isset($_POST["search"])) {
@@ -128,9 +128,9 @@
         ?>
         <div class="cover">
         <h2>売れ筋商品</h2>
-        <a href="../shopping/detail/<?php echo $top[0][1] ?>.php"><img src="../images/<?php echo $top[0][2]; ?>" alt="" width="200px"></a>
-        <a href="../shopping/detail/<?php echo $top[1][1] ?>.php"><img src="../images/<?php echo $top[1][2]; ?>" alt="" width="200px"></a>
-        <a href="../shopping/detail/<?php echo $top[2][1] ?>.php"><img src="../images/<?php echo $top[2][2]; ?>" alt="" width="200px"></a>
+        <a href="../shopping/detail/<?php echo $top[0][1] ?>.php"><img src="../images/<?php echo $top[0][2]; ?>.png" alt="" width="200px"></a>
+        <a href="../shopping/detail/<?php echo $top[1][1] ?>.php"><img src="../images/<?php echo $top[1][2]; ?>.png" alt="" width="200px"></a>
+        <a href="../shopping/detail/<?php echo $top[2][1] ?>.php"><img src="../images/<?php echo $top[2][2]; ?>.png" alt="" width="200px"></a>
         </div>
     </main>
     <footer>

@@ -92,7 +92,22 @@
                 if ($enum != $edit){
                     fwrite($fp, $lines[$i].PHP_EOL);
                 } else {
-                    fwrite($fp, $edit.",".$i_name.",".$i_pic.",".$i_comment.",".$i_price.",".$i_count.","."1".","."5".",".$date.PHP_EOL);
+                    if (!empty($i_name)) {
+                        $line[1] = $i_name;
+                    }
+                    if (!empty($i_pic)) {
+                        $line[2] = $i_pic;
+                    }
+                    if (!empty($i_comment)) {
+                        $line[3] = $i_comment;
+                    }
+                    if (!empty($i_price)) {
+                        $line[4] = $i_price;
+                    }
+                    if (!empty($i_count)) {
+                        $line[5] = $i_count;
+                    }
+                    fwrite($fp, $edit.",".$line[1].",".$line[2].",".$line[3].",".$line[4].",".$line[5].",".$line[6].","."5".",".$date.PHP_EOL);
                     $flag = 1;
                 }
             }

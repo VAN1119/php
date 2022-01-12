@@ -59,7 +59,7 @@ header h1 {
     margin-bottom: 20px;
 }
 
-.start_btn {
+.start_btn, .btn {
     text-align: center;
     font-weight: bold;
     font-size: 20px;

@@ -23,8 +23,8 @@
             <li><a href="shopping_favorite.php">お気に入り</a></li>
             <li>
                 <form action="" method="post">
-                    <input type="search" name="search" placeholder="キーワードを入力">
-                    <input type="submit" name="submit" value="検索">
+                    <input type="search" name="search" placeholder="アイテムを探す">
+                    <input type="image" src="../images/search_mushimegane.png" width="25px"name="image" tabindex="1" value="検索">
                 </form>
                 <?php
                 if (isset($_POST["search"])) {
