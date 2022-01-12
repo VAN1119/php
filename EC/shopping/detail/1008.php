@@ -57,7 +57,7 @@
     </nav>
     <main>
         <?php
-        $item_num = 1001;
+        $item_num = 1008;
         $filename = "../../csv/items.csv";
         $lines = file($filename);
         $i;
@@ -86,17 +86,15 @@
         </div>
         <div class="buy_btn">
             <form method="POST" action="">
-                <input class="btn" type="number" name="count" placeholder="数量" value="">
-            </form>
-            <form method="POST" action="">
-                <input class="btn" type="submit" name="cart" value="カートへ追加">
+                <input class="start_btn buy_btn2" type="number" name="count" placeholder="数量" value="">
+                <input class="start_btn buy_btn2" type="submit" name="cart" value="カートへ追加">
             </form>
         </div>
         <div class="buy_btn">
             <form method="POST" action="">
-            <input class="btn" type="submit" name="favorite" value="お気に入りへ追加">
+            <input class="start_btn buy_btn2" type="submit" name="favorite" value="お気に入りへ追加">
             </form>
-            <a class="btn" href="../shopping_cart.php">カートへ移動</a>
+            <a class="start_btn buy_btn2" href="../shopping_cart.php">カートへ移動</a>
         </div>
         <p class="ans">
         <?php

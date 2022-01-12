@@ -19,12 +19,12 @@
     </header>
     <nav>
         <ul class="nav">
-            <a href="../user/user_top.php">トップ画面</a>
-            <li><a href="shopping_favorite.php">お気に入り</a></li>
+            <a class="tbtn" href="../user/user_top.php">トップ画面</a>
+            <li><a class="obtn" href="shopping_favorite.php">お気に入り</a></li>
             <li>
                 <form action="" method="post">
                     <input type="search" name="search" placeholder="アイテムを探す">
-                    <input type="image" src="../images/search_mushimegane.png" width="25px"name="image" tabindex="1" value="検索">
+                    <input type="submit" name="" value="検索">
                 </form>
                 <?php
                 if (isset($_POST["search"])) {
@@ -72,8 +72,8 @@
             ?>
             <hr>
             <p class="total_price">合計金額:<?php echo $total ?>円</p>
-            <div class="btn">
-                <a class="start_btn" href="shopping_buy.php">購入</a>
+            <div>
+                <a class="cbtn" href="shopping_buy.php">購入</a>
             </div>
         </div>
     </main>
