@@ -25,6 +25,32 @@
                     <input type="search" name="search" placeholder="アイテムを探す">
                     <input type="image" name="image" tabindex="1" value="検索">
                 </form>
+                <?php
+                if (isset($_POST["search"])) {
+                    $searc = $_POST['search'];
+                    $search = '/'.$searc.'/';
+                }
+                if (!empty($search)) {
+                    $fileitems = "../csv/items.csv";
+                    $ilines = file($fileitems,FILE_IGNORE_NEW_LINES);
+                    $filesearch = "../csv/search.csv";
+                    $sfp = fopen($filesearch, "w");
+                    $sflag = 0;
+                    foreach ($ilines as $iline) {
+                        $iarray = explode(",", $iline);
+                        if (preg_match($search, $iarray[1]) || preg_match($search, $iarray[3])) {
+                            fwrite($sfp, $iline.PHP_EOL);
+                            $sflag = 1;
+                        }
+                    }
+                    if ($sflag == 1) {
+                        header("Location:../shopping/shopping_search.php");
+                    } else {
+                        header("Location:../shopping/shopping_search.php");
+                    }
+                    fclose($sfp);
+                }
+                ?>
             </li>
         </ul>
     </nav>

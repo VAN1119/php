@@ -39,7 +39,7 @@
                     $sflag = 0;
                     foreach ($ilines as $iline) {
                         $iarray = explode(",", $iline);
-                        if (preg_match($search, $iarray[1])) {
+                        if (preg_match($search, $iarray[1]) || preg_match($search, $iarray[3])) {
                             fwrite($sfp, $iline.PHP_EOL);
                             $sflag = 1;
                         }
@@ -47,7 +47,7 @@
                     if ($sflag == 1) {
                         header("Location:shopping_search.php");
                     } else {
-                        echo "お探しの商品は見つかりませんでした。";
+                        header("Location:shopping_search.php");
                     }
                     fclose($sfp);
                 }

@@ -67,7 +67,7 @@
                 <input class="start_btn buy_btn2" type="submit" name="cart" value="カートへ追加">
             </form>
         </div>
-        <div class="buy_btn">
+        <div class="item_favorite">
             <form method="POST" action="">
             <input class="start_btn buy_btn2" type="submit" name="favorite" value="お気に入りへ追加">
             </form>

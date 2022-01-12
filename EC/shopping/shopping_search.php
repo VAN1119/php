@@ -26,6 +26,32 @@
                     <input type="search" name="search" placeholder="キーワードを入力">
                     <input type="submit" name="submit" value="検索">
                 </form>
+                <?php
+                if (isset($_POST["search"])) {
+                    $searc = $_POST['search'];
+                    $search = '/'.$searc.'/';
+                }
+                if (!empty($search)) {
+                    $fileitems = "../csv/items.csv";
+                    $ilines = file($fileitems,FILE_IGNORE_NEW_LINES);
+                    $filesearch = "../csv/search.csv";
+                    $sfp = fopen($filesearch, "w");
+                    $sflag = 0;
+                    foreach ($ilines as $iline) {
+                        $iarray = explode(",", $iline);
+                        if (preg_match($search, $iarray[1]) || preg_match($search, $iarray[3])) {
+                            fwrite($sfp, $iline.PHP_EOL);
+                            $sflag = 1;
+                        }
+                    }
+                    if ($sflag == 1) {
+                        header("Location:shopping_search.php");
+                    } else {
+                        header("Location:shopping_search.php");
+                    }
+                    fclose($sfp);
+                }
+                ?>
             </li>
         </ul>
     </nav>
@@ -37,14 +63,18 @@
             <?php
             $filesearch = "../csv/search.csv";
             $slines = file($filesearch ,FILE_IGNORE_NEW_LINES);
-            foreach($slines as $sline){
-                $array = explode(",", $sline);
-                ?>
-                <div class="favo">
-                        <p><a href="detail/<?php echo $array[0] ?>.php"><img class="" src="../images/<?php echo $array[2]?>" alt="表示例" width="200px"></a></p>
-                        <p>商品名:<?php echo $array[1]; ?><br>金額:<?php echo $array[4]; ?>円</p>
-                </div>
-                <?php
+            if (0 < count($slines)) {
+                foreach($slines as $sline){
+                    $array = explode(",", $sline);
+                    ?>
+                    <div class="favo">
+                            <p><a href="detail/<?php echo $array[0] ?>.php"><img class="" src="../images/<?php echo $array[2]?>" alt="表示例" width="200px"></a></p>
+                            <p>商品名:<?php echo $array[1]; ?><br>金額:<?php echo $array[4]; ?>円</p>
+                    </div>
+                    <?php
+                }
+            } else {
+                echo "お探しの商品は見つかりませんでした。";
             }
             ?>
             </div>
