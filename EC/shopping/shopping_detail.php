@@ -19,34 +19,38 @@
     </header>
     <nav>
         <ul class="nav">
-            <a class="btn" href="../user/user_top.php">トップ画面        </a>
-            <li><a class="btn" href="shopping_favorite.php">お気に入り</a></li>
-            <li>
-                <form action="" method="post">
-                    <input type="search" name="search" placeholder="アイテムを探す">
-                    <input type="submit" name="" value="検索">
-                </form>
-                <?php
+            <li><a class="nav_btn" href="../user/user_top.php">トップ画面</a></li>
+            <li><a class="nav_btn" href="shopping_favorite.php">お気に入り</a></li>
+            <form action="" method="post">
+                <input type="search" name="search" placeholder="アイテムを探す">
+                <input type="submit" name="" value="検索">
+            </form>
+            <?php
+            if (isset($_POST["search"])) {
+                $searc = $_POST['search'];
+                $search = '/'.$searc.'/';
+            }
+            if (!empty($search)) {
                 $fileitems = "../csv/items.csv";
                 $ilines = file($fileitems,FILE_IGNORE_NEW_LINES);
-                $fileserch = "../csv/serch.csv";
-                $sfp = fopen($fileserch, "w");
+                $filesearch = "../csv/search.csv";
+                $sfp = fopen($filesearch, "w");
                 $sflag = 0;
                 foreach ($ilines as $iline) {
                     $iarray = explode(",", $iline);
-                    if (preg_match($search, $iarray[1])) {
-                        fwrite($fp, $ilines.PHP_EOL);
+                    if (preg_match($search, $iarray[1]) || preg_match($search, $iarray[3])) {
+                        fwrite($sfp, $iline.PHP_EOL);
                         $sflag = 1;
                     }
                 }
                 if ($sflag == 1) {
-                    header("Location:shopping_serch.php");
+                    header("Location:shopping_search.php");
                 } else {
-                    echo "お探しの商品は見つかりませんでした。";
+                    header("Location:shopping_search.php");
                 }
-                fclose($fp);
-                ?>
-            </li>
+                fclose($sfp);
+            }
+            ?>  
         </ul>
     </nav>
     <main>

@@ -76,7 +76,7 @@ header h1 {
     margin: 0 50px;
 }
 /* top_btn*/
-.tbtn {
+.nav_btn {
     text-align: center;
     font-weight: bold;
     font-size: 20px;
@@ -180,10 +180,11 @@ header h1 {
 .btn a {
     margin: 0 auto;
 }
-.item_favorite {
+.item_favorite, .item_search {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    flex-wrap: wrap;
 }
 .ans {
     font-size: 25px;
