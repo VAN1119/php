@@ -55,7 +55,7 @@
     </nav>
     <main>
         <?php
-        $item_num = 1004;
+        $item_num = 1011;
         $filename = "../../csv/items.csv";
         $lines = file($filename);
         $i;

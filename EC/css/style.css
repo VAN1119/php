@@ -150,7 +150,6 @@ header h1 {
     display: flex;
     justify-content: center;
     width: 100%;
-    border: #f00 solid 3px;
 }
 .item_img {
     margin: 0 180px;
@@ -167,11 +166,9 @@ header h1 {
 .buy_btn {
     display:flex;
     justify-content: center;
-    border: 2px brown solid;
 }
 .buy_btn2 {
     margin: 10px 20px;
-    border: 2px brown solid;
 }
 .wrap_btn {
     border: 2px green solid;
