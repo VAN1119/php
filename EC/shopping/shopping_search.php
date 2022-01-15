@@ -55,8 +55,7 @@
     </nav>
     <main>
         <div class="cover">
-            <h2>検索画面</h2>
-            <p>検索結果一覧</p>
+            <h2>検索結果一覧</h2>
             <div class="item_search">
             <?php
             $filesearch = "../csv/search.csv";

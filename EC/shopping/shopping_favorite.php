@@ -55,7 +55,7 @@
     </nav>
     <main>
         <div class="cover">
-            <h2>お気に入り画面</h2>
+            <h2>お気に入り商品</h2>
             <form action="" method="POST">
             <div class="item_favorite">
             <?php

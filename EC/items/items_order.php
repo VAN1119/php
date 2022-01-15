@@ -23,9 +23,6 @@
         </div>
     </nav>
     <main>
-        行数を変更する処理(数量)
-        ページを表示した時に一覧が表示されており、
-        下のフォームで商品番号と数量を指定するとその分だけ増える仕様
         <div class="cover">
             <form method="POST" action="">
                 <div class="login">

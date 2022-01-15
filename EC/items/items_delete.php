@@ -23,10 +23,6 @@
         </div>
     </nav>
     <main>
-        行数を削除する処理(商品削除)
-        ページを表示した時に一覧が表示されており、
-        下のフォームで商品番号を指定すると
-        その行が削除される仕様
         <div class="cover">
             <form method="POST" action="">
                 <div class="login">

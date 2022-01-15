@@ -192,7 +192,15 @@ header h1 {
 .total_price {
     font-size: 50px;
     font-weight: bold;
+    /* 下記try */
+    text-align: center;
+    border: red 2px solid;
 }
 footer {
     text-align: center;
+}
+
+/* 管理画面の表示調整 try*/
+.items_cover {
+    display: flex;
 }

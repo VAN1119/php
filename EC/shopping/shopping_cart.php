@@ -68,12 +68,63 @@
                 }
             }
             ?>
+            <!-- ここからお気に入り画面の流用-->
+            <form action="" method="POST">
+            <div class="item_favorite">
+                <?php
+                $filecart = "../csv/cart.csv";
+                $clines = file($filecart,FILE_IGNORE_NEW_LINES);
+                if(count($clines) > 0){
+                    foreach($clines as $cline){
+                        $array = explode(",", $cline);
+                        ?>
+                        <div class="favo">
+                            <p><a href="detail/<?php echo $array[0] ?>.php"><img class="" src="../images/<?php echo $array[2]?>.png" alt="表示例" width="200px"></a></p>
+                            <p>商品名:<?php echo $array[1]; ?><br>金額:<?php echo $array[4]; ?>円<br>数量:<?php echo $array[9]; ?></p>
+                            <hr>
+                            <p>合計金額:<?php echo $array[4] * $array[9]; ?></p>
+                            <input type="checkbox" name="delete[]" value="<?php echo $cline; ?>">削除
+                        </div>
+                        <?php
+                    }
+                    if (isset($_POST["delete"])) {
+                        $delete = $_POST['delete'];
+                    }
+                    // deleteが$kの時にファイル分を確認する方法
+                    if (!empty($delete)) {
+                        $fp = fopen($filecart, "w");
+                        $k = 0;
+                        foreach ($clines as $cline) {
+                            $darray = explode(",", $cline);
+                            $flag = 0;
+                            foreach ($delete as $dele) {
+                                if ($dele == $cline) {
+                                    $flag = 1;
+                                }
+                            }
+                            if ($flag == 0) {
+                                fwrite($fp, $clines[$k].PHP_EOL);
+                                $k++;
+                            } else {
+                                $k++;
+                            }
+                        }
+                        fclose($fp);
+                        header("Location:#");
+                    }
+                    ?>
+                    </div>
+                    <input type="submit" value="削除">
+                    <?php
+                } else {
+                    echo "カートに商品はありません";
+                }
+                ?>
+            </div>
             <hr>
             <p class="total_price">合計金額:<?php echo $total ?>円</p>
-            <div>
-                <a class="cbtn" href="shopping_buy.php">購入</a>
-            </div>
         </div>
+        <a class="cbtn" href="shopping_buy.php">購入</a>
     </main>
     <footer>
         <small>&copy;2021 Ban</small>
