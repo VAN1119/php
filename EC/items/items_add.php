@@ -19,7 +19,7 @@
     </header>
     <nav>
         <div class="buy_btn">
-            <a class="start_btn buy_btn2" href="../admin/admin_top.php">管理トップ</a>
+            <a class="admin_top_btn" href="../admin/admin_top.php">管理トップ</a>
         </div>
     </nav>
     <main>
@@ -87,6 +87,7 @@
             }
             ?>
             </p>
+            <div class="item_info">
             <?php
             if(file_exists($filename)){
                 $lines = file($filename,FILE_IGNORE_NEW_LINES);
@@ -96,6 +97,7 @@
                 }
             }
             ?>
+            </div>
         </div>
     </main>
     <footer>

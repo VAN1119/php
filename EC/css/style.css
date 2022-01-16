@@ -58,6 +58,27 @@ header h1 {
     height: 45px;
     margin-bottom: 20px;
 }
+/* 管理TOPへのボタン*/
+.admin_top_btn {
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+    width: 200px;
+    display: block;
+    line-height: 2em; /* 高さを中央揃え …難しい*/
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+    border: 3px solid black;
+    margin: 0 50px;
+}
+.admin_top_btn:hover {
+    color:white;
+    background-color: black;
+}
 
 .start_btn, .btn {
     text-align: center;
@@ -79,11 +100,11 @@ header h1 {
 .nav_btn {
     text-align: center;
     font-weight: bold;
-    font-size: 20px;
-    width: 200px;
+    font-size: 10px;
+    width: 150px;
     height: 50px;
     display: block;
-    line-height: 2em; /* 高さを中央揃え …難しい*/
+    line-height: 1em; /* 高さを中央揃え …難しい*/
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
@@ -132,9 +153,7 @@ header h1 {
 }
 .nav {
     display: flex;
-    justify-content: flex-end;
-    position: relative;
-    right: 5%;
+    justify-content: space-around;
     margin-bottom: 2px;
 }
 .nav li {
@@ -203,4 +222,8 @@ footer {
 /* 管理画面の表示調整 try*/
 .items_cover {
     display: flex;
+}
+/* 管理画面の文字の大きさ調整 try */
+.item_info {
+    font-size: 70%;
 }
