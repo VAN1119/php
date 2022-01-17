@@ -73,7 +73,7 @@ header h1 {
     color: black;
     background-color: white;
     border: 3px solid black;
-    margin: 0 50px;
+    margin: auto;
 }
 .admin_top_btn:hover {
     color:white;
@@ -102,9 +102,9 @@ header h1 {
     font-weight: bold;
     font-size: 10px;
     width: 150px;
-    height: 50px;
+    height: 35px;
     display: block;
-    line-height: 1em; /* 高さを中央揃え …難しい*/
+    line-height: 2em; /* 高さを中央揃え …難しい*/
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
@@ -156,9 +156,9 @@ header h1 {
     justify-content: space-around;
     margin-bottom: 2px;
 }
-.nav li {
-    margin: 20px 60px;
-}
+/* .nav li {
+    margin: 0px 60px;
+} */
 .item_detail {
     text-align: center;
 }
@@ -211,9 +211,7 @@ header h1 {
 .total_price {
     font-size: 50px;
     font-weight: bold;
-    /* 下記try */
     text-align: center;
-    border: red 2px solid;
 }
 footer {
     text-align: center;
@@ -222,6 +220,7 @@ footer {
 /* 管理画面の表示調整 try*/
 .items_cover {
     display: flex;
+    justify-content: center;
 }
 /* 管理画面の文字の大きさ調整 try */
 .item_info {
