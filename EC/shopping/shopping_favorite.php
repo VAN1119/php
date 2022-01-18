@@ -19,14 +19,18 @@
     </header>
     <nav>
         <ul class="nav">
-            <li><a class="nav_btn" href="../user/user_top.php">トップ画面</a></li>
-            <li><a class="nav_btn" href="shopping_favorite.php">お気に入り</a></li>
-            <li>
-                <form action="" method="post">
-                    <input type="search" name="search" placeholder="アイテムを探す">
-                    <input type="submit" name="" value="検索">
-                </form>
-            <li>
+            <div class="left_nav">
+                <li><a class="nav_btn" href="../user/user_top.php">トップ画面</a></li>
+                <li><a class="nav_btn" href="shopping_favorite.php">お気に入り</a></li>
+            </div>
+            <div class="right_nav">
+                <li>
+                    <form action="" method="post">
+                        <input class="right_input" type="search" name="search" placeholder="アイテムを探す">
+                        <input class="right_input" type="submit" name="" value="検索">
+                    </form>
+                </li>
+            </div>
             <?php
             if (isset($_POST["search"])) {
                 $searc = $_POST['search'];

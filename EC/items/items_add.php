@@ -26,14 +26,12 @@
         <div class="items_cover">
             <div class="cover">
                 <form method="POST" action="">
-                    <div class="login">
-                        <p><input type="text" name="i_name" placeholder="商品名" value=""></p>
-                        <p><input type="text" name="i_pic" placeholder="商品画像" value=""></p>
-                        <p><input type="text" name="i_comment" placeholder="商品説明" value=""></p>
-                        <p><input type="number" name="i_price" placeholder="値段" value=""></p>
-                        <p><input type="number" name="i_count" placeholder="在庫数" value=""></p>
-                        <input type="submit" name="submit" value="商品追加">
-                    </div>
+                    <p><input type="text" name="i_name" placeholder="商品名" value=""></p>
+                    <p><input type="text" name="i_pic" placeholder="商品画像" value=""></p>
+                    <p><input type="text" name="i_comment" placeholder="商品説明" value=""></p>
+                    <p><input type="number" name="i_price" placeholder="値段" value=""></p>
+                    <p><input type="number" name="i_count" placeholder="在庫数" value=""></p>
+                    <input type="submit" name="submit" value="商品追加">
                 </form>
             </div>
             <p class="ans">

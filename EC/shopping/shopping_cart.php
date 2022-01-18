@@ -24,10 +24,12 @@
                 <li><a class="nav_btn" href="shopping_favorite.php">お気に入り</a></li>
             </div>
             <div class="right_nav">
-                <form action="" method="post">
-                    <input type="search" name="search" placeholder="アイテムを探す">
-                    <input type="submit" name="" value="検索">
-                </form>
+                <li>
+                    <form action="" method="post">
+                        <input class="right_input" type="search" name="search" placeholder="アイテムを探す">
+                        <input class="right_input" type="submit" name="" value="検索">
+                    </form>
+                </li>
             </div>
             <?php
             if (isset($_POST["search"])) {

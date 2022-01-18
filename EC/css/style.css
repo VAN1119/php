@@ -53,7 +53,14 @@ header h1 {
 .ligin_b {
     text-align: center;
 }
+/* itemsのフォーム部分 */
 .login input {
+    width: 300px;
+    height: 45px;
+    margin-bottom: 20px;
+}
+/* itemsのフォーム部分(add) */
+.cover input {
     width: 300px;
     height: 45px;
     margin-bottom: 20px;
@@ -82,8 +89,6 @@ header h1 {
 /* 詳細画面ボタン */
 .detail_btn {
     text-align: center;
-    font-weight: bold;
-    font-size: 20px;
     width: 250px;
     display: block;
     line-height: 2.4em; /* 高さを中央揃え …難しい*/
@@ -94,7 +99,7 @@ header h1 {
     color: black;
     background-color: white;
     border: 3px solid black;
-    margin: 10px 10px;
+    margin: 5px;
     cursor: pointer;
 }
 .detail_btn:hover {
@@ -105,9 +110,7 @@ header h1 {
 /* 削除ボタン */
 .delete_btn {
     text-align: center;
-    font-weight: bold;
-    font-size: 20px;
-    width: 250px;
+    width: 150px;
     display: block;
     line-height: 2.4em; /* 高さを中央揃え …難しい*/
     text-decoration: none;
@@ -144,8 +147,6 @@ header h1 {
 /* navのボタンと位置*/
 .nav_btn {
     text-align: center;
-    font-weight: bold;
-    font-size: 10px;
     width: 150px;
     height: 35px;
     display: block;
@@ -157,11 +158,14 @@ header h1 {
     color: black;
     background-color: white;
     border: 3px solid black;
-    margin: 0 auto;
 }
 .nav_btn:hover {
     color:white;
     background-color: black;
+}
+
+nav li {
+    margin: 10px;
 }
 /* favo_btn*/
 .obtn {
@@ -203,11 +207,7 @@ header h1 {
 .nav {
     display: flex;
     justify-content: space-around;
-    margin: 10px;
 }
-/* .nav li {
-    margin: 0px 60px;
-} */
 .item_detail {
     text-align: center;
 }
@@ -288,4 +288,7 @@ footer {
 }
 .right_nav {
     border: blue 2px solid;
+}
+.right_input {
+    height: 30px;
 }
