@@ -65,7 +65,7 @@
                     $array = explode(",", $sline);
                     ?>
                     <div class="favo">
-                            <p><a href="detail/<?php echo $array[0] ?>.php"><img class="" src="../images/<?php echo $array[2]?>.png" alt="表示例" width="200px"></a></p>
+                            <p><a href="detail/<?php echo $array[0] ?>.php"><img class="" src="../images/<?php echo $array[2]?>.png" alt="表示例" width="150px"></a></p>
                             <p>商品名:<?php echo $array[1]; ?><br>金額:<?php echo $array[4]; ?>円</p>
                     </div>
                     <?php

@@ -101,7 +101,7 @@
                 }
                 ?>
                 </div>
-                <input type="submit" value="削除">
+                <input class="delete_btn" type="submit" value="削除">
                 <?php
             } else {
                 echo "お気に入りに登録している商品はありません";

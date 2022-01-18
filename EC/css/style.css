@@ -73,14 +73,59 @@ header h1 {
     color: black;
     background-color: white;
     border: 3px solid black;
-    margin: auto;
+    margin: 5px;
 }
 .admin_top_btn:hover {
     color:white;
     background-color: black;
 }
+/* 詳細画面ボタン */
+.detail_btn {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    width: 250px;
+    display: block;
+    line-height: 2.4em; /* 高さを中央揃え …難しい*/
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+    border: 3px solid black;
+    margin: 10px 10px;
+    cursor: pointer;
+}
+.detail_btn:hover {
+    color:white;
+    background-color: black;
+}
 
-.start_btn, .btn {
+/* 削除ボタン */
+.delete_btn {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    width: 250px;
+    display: block;
+    line-height: 2.4em; /* 高さを中央揃え …難しい*/
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+    border: 3px solid black;
+    margin: 10px 10px;
+    cursor: pointer;
+}
+.delete_btn:hover {
+    color:white;
+    background-color: black;
+}
+
+.start_btn{
     text-align: center;
     font-weight: bold;
     font-size: 20px;
@@ -96,7 +141,7 @@ header h1 {
     border: 3px solid black;
     margin: 0 50px;
 }
-/* top_btn*/
+/* navのボタンと位置*/
 .nav_btn {
     text-align: center;
     font-weight: bold;
@@ -104,7 +149,7 @@ header h1 {
     width: 150px;
     height: 35px;
     display: block;
-    line-height: 2em; /* 高さを中央揃え …難しい*/
+    line-height: 1.5em; /* 高さを中央揃え …難しい*/
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
@@ -113,6 +158,10 @@ header h1 {
     background-color: white;
     border: 3px solid black;
     margin: 0 auto;
+}
+.nav_btn:hover {
+    color:white;
+    background-color: black;
 }
 /* favo_btn*/
 .obtn {
@@ -154,7 +203,7 @@ header h1 {
 .nav {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 2px;
+    margin: 10px;
 }
 /* .nav li {
     margin: 0px 60px;
@@ -225,4 +274,18 @@ footer {
 /* 管理画面の文字の大きさ調整 try */
 .item_info {
     font-size: 70%;
+}
+
+/* カートのアイテム　*/
+.cart_item {
+    margin: 10px;
+}
+
+/* navの左右 (カートで挑戦中)*/
+.left_nav {
+    display: flex;
+    border: brown 2px solid;
+}
+.right_nav {
+    border: blue 2px solid;
 }

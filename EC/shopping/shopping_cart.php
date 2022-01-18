@@ -19,12 +19,16 @@
     </header>
     <nav>
         <ul class="nav">
-            <li><a class="nav_btn" href="../user/user_top.php">トップ画面</a></li>
-            <li><a class="nav_btn" href="shopping_favorite.php">お気に入り</a></li>
-            <form action="" method="post">
-                <input type="search" name="search" placeholder="アイテムを探す">
-                <input type="submit" name="" value="検索">
-            </form>
+            <div class="left_nav">
+                <li><a class="nav_btn" href="../user/user_top.php">トップ画面</a></li>
+                <li><a class="nav_btn" href="shopping_favorite.php">お気に入り</a></li>
+            </div>
+            <div class="right_nav">
+                <form action="" method="post">
+                    <input type="search" name="search" placeholder="アイテムを探す">
+                    <input type="submit" name="" value="検索">
+                </form>
+            </div>
             <?php
             if (isset($_POST["search"])) {
                 $searc = $_POST['search'];
@@ -56,36 +60,26 @@
     <main>
         <div class="cover">
             <h2>カート画面</h2>
-            <?php
-            $filecart = "../csv/cart.csv";
-            $total = 0;
-            if(file_exists($filecart)){
-                $clines = file($filecart,FILE_IGNORE_NEW_LINES);
-                foreach($clines as $cline){
-                    $array = explode(",", $cline);
-                    echo "商品名:".$array[1]." 数量:".$array[9]." 単価:".$array[4]." 合計金額:".$array[9] * $array[4]."円<br>";
-                    $total += $array[9] * $array[4];
-                }
-            }
-            ?>
             <!-- ここからお気に入り画面の流用-->
             <form action="" method="POST">
             <div class="item_favorite">
                 <?php
                 $filecart = "../csv/cart.csv";
+                $total = 0;
                 $clines = file($filecart,FILE_IGNORE_NEW_LINES);
                 if(count($clines) > 0){
                     foreach($clines as $cline){
                         $array = explode(",", $cline);
                         ?>
-                        <div class="favo">
-                            <p><a href="detail/<?php echo $array[0] ?>.php"><img class="" src="../images/<?php echo $array[2]?>.png" alt="表示例" width="200px"></a></p>
-                            <p>商品名:<?php echo $array[1]; ?><br>金額:<?php echo $array[4]; ?>円<br>数量:<?php echo $array[9]; ?></p>
+                        <div class="cart_item">
+                            <p><a href="detail/<?php echo $array[0] ?>.php"><img class="" src="../images/<?php echo $array[2]?>.png" alt="表示例" width="100px"></a></p>
+                            <p>商品名:<?php echo $array[1]; ?><br>金額:<?php echo $array[4]; ?>円 数量:<?php echo $array[9]; ?></p>
                             <hr>
                             <p>合計金額:<?php echo $array[4] * $array[9]; ?></p>
                             <input type="checkbox" name="delete[]" value="<?php echo $cline; ?>">削除
                         </div>
                         <?php
+                        $total += $array[4] * $array[9];
                     }
                     if (isset($_POST["delete"])) {
                         $delete = $_POST['delete'];

@@ -84,15 +84,15 @@
         </div>
         <form method="POST" action="">
         <div class="buy_btn">
-                <input class="btn" type="number" name="count" placeholder="数量" value="">
-                <input class="btn" type="submit" name="cart" value="カートへ追加">
+                <input class="detail_btn" type="number" name="count" placeholder="数量" value="">
+                <input class="detail_btn" type="submit" name="cart" value="カートへ追加">
         </div>
         </form>
         <div class="buy_btn">
             <form method="POST" action="">
-            <input class="btn" type="submit" name="favorite" value="お気に入りへ追加">
+            <input class="detail_btn" type="submit" name="favorite" value="お気に入りへ追加">
             </form>
-            <a class="btn" href="../shopping_cart.php">カートへ移動</a>
+            <a class="detail_btn" href="../shopping_cart.php">カートへ移動</a>
         </div>
         <p class="ans">
         <?php
