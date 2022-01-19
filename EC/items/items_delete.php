@@ -19,7 +19,7 @@
     </header>
     <nav>
         <div class="buy_btn">
-            <a class="start_btn buy_btn2" href="../admin/admin_top.php">管理トップ</a>
+            <a class="admin_top_btn" href="../admin/admin_top.php">管理トップ</a>
         </div>
     </nav>
     <main>

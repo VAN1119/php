@@ -24,7 +24,7 @@
     </nav>
     <main>
         <div class="items_cover">
-            <div class="cover">
+            <div class="cover_add login">
                 <form method="POST" action="">
                     <p><input type="text" name="i_name" placeholder="商品名" value=""></p>
                     <p><input type="text" name="i_pic" placeholder="商品画像" value=""></p>

@@ -19,12 +19,18 @@
     </header>
     <nav>
         <ul class="nav">
-            <li><a href="../../user/user_top.php">トップ画面</a><li>
-            <li><a href="../shopping_favorite.php">お気に入り</a></li>
-            <form action="" method="post">
-                <input type="search" name="search" placeholder="アイテムを探す">
-                <input type="submit" name="" value="検索">
-            </form>
+            <div class="left_nav">
+                <li><a class="nav_btn" href="../../user/user_top.php">トップ画面</a></li>
+                <li><a class="nav_btn" href="../shopping_favorite.php">お気に入り</a></li>
+            </div>
+            <div class="right_nav">
+                <li>
+                    <form action="" method="post">
+                        <input class="right_input" type="search" name="search" placeholder="アイテムを探す">
+                        <input class="right_input" type="submit" name="" value="検索">
+                    </form>
+                </li>
+            </div>
             <?php
             if (isset($_POST["search"])) {
                 $searc = $_POST['search'];
@@ -82,19 +88,17 @@
                 <p class="item_price"><?php echo $item_price ?>円</p>
             </div>
         </div>
+        <form method="POST" action="">
         <div class="buy_btn">
-            <form method="POST" action="">
-                <input class="btn" type="number" name="count" placeholder="数量" value="">
-            </form>
-            <form method="POST" action="">
-                <input class="btn" type="submit" name="cart" value="カートへ追加">
-            </form>
+                <input class="detail_btn" type="number" name="count" placeholder="数量" value="">
+                <input class="detail_btn" type="submit" name="cart" value="カートへ追加">
         </div>
+        </form>
         <div class="buy_btn">
             <form method="POST" action="">
-            <input class="btn" type="submit" name="favorite" value="お気に入りへ追加">
+            <input class="detail_btn" type="submit" name="favorite" value="お気に入りへ追加">
             </form>
-            <a class="btn" href="../shopping_cart.php">カートへ移動</a>
+            <a class="detail_btn" href="../shopping_cart.php">カートへ移動</a>
         </div>
         <p class="ans">
         <?php

@@ -20,8 +20,8 @@
     <nav>
         <ul class="nav">
             <div class="left_nav">
-                <li><a class="nav_btn" href="../user/user_top.php">トップ画面</a></li>
-                <li><a class="nav_btn" href="shopping_favorite.php">お気に入り</a></li>
+                <li><a class="nav_btn" href="../../user/user_top.php">トップ画面</a></li>
+                <li><a class="nav_btn" href="../shopping_favorite.php">お気に入り</a></li>
             </div>
             <div class="right_nav">
                 <li>

@@ -102,14 +102,17 @@
         $array = explode(",",$lines[$top[0][0]]);
         $top[0][1] = $array[0];
         $top[0][2] = $array[2];
+        $top[0][3] = $array[1];
         // 2番目に売上が大きい商品番号
         $array = explode(",",$lines[$top[1][0]]);
         $top[1][1] = $array[0];
         $top[1][2] = $array[2];
+        $top[1][3] = $array[1];
         // 3番目に売上が大きい商品番号
         $array = explode(",",$lines[$top[2][0]]);
         $top[2][1] = $array[0];
         $top[2][2] = $array[2];
+        $top[2][3] = $array[1];
         /*
         for ($j = 0; $j < count($lines); $j++) {
             $array = explode(",", $lines[$j]);
@@ -131,10 +134,21 @@
         } */
         ?>
         <div class="cover">
-        <h2>売れ筋商品</h2>
-        <a href="../shopping/detail/<?php echo $top[0][1] ?>.php"><img src="../images/<?php echo $top[0][2]; ?>.png" alt="" width="200px"></a>
-        <a href="../shopping/detail/<?php echo $top[1][1] ?>.php"><img src="../images/<?php echo $top[1][2]; ?>.png" alt="" width="200px"></a>
-        <a href="../shopping/detail/<?php echo $top[2][1] ?>.php"><img src="../images/<?php echo $top[2][2]; ?>.png" alt="" width="200px"></a>
+            <h2>売れ筋商品</h2>
+            <div class="top_items">
+                <div>
+                    <a href="../shopping/detail/<?php echo $top[0][1]; ?>.php"><img src="../images/<?php echo $top[0][2]; ?>.png" alt="" width="200px"></a>
+                    <p>商品名:<?php echo $top[0][3]; ?></p>
+                </div>
+                <div>
+                    <a href="../shopping/detail/<?php echo $top[1][1]; ?>.php"><img src="../images/<?php echo $top[1][2]; ?>.png" alt="" width="200px"></a>
+                    <p>商品名:<?php echo $top[1][3]; ?></p>
+                </div>
+                <div>
+                    <a href="../shopping/detail/<?php echo $top[2][1]; ?>.php"><img src="../images/<?php echo $top[2][2]; ?>.png" alt="" width="200px"></a>
+                    <p>商品名:<?php echo $top[2][3]; ?></p>
+                </div>
+            </div>
         </div>
     </main>
     <footer>

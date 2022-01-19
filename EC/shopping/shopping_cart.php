@@ -105,8 +105,8 @@
                                 $k++;
                             }
                         }
-                        fclose($fp);
                         header("Location:#");
+                        fclose($fp);
                     }
                     ?>
                     </div>
