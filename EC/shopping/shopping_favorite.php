@@ -30,6 +30,7 @@
                         <input class="right_input" type="submit" name="" value="検索">
                     </form>
                 </li>
+                <li><a class="nav_btn" href="../user/user_login.php">ログアウト</a></li>
             </div>
             <?php
             if (isset($_POST["search"])) {
@@ -74,7 +75,7 @@
                     <div class="favo">
                         <p><a href="detail/<?php echo $array[0] ?>.php"><img class="" src="../images/<?php echo $array[2]?>.png" alt="表示例" width="200px"></a></p>
                         <p>商品名:<?php echo $array[1]; ?><br>金額:<?php echo $array[4]; ?>円</p>
-                        <input type="checkbox" name="delete[]" value="<?php echo $array[0]; ?>">
+                        <input type="checkbox" name="delete[]" value="<?php echo $fline; ?>">
                     </div>
                     <?php
                 }
@@ -89,7 +90,7 @@
                         $darray = explode(",", $fline);
                         $flag = 0;
                         foreach ($delete as $dele) {
-                            if ($dele == $darray[0]) {
+                            if ($dele == $fline) {
                                 $flag = 1;
                             }
                         }

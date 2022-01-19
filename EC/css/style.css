@@ -59,6 +59,9 @@ header h1 {
     height: 45px;
     margin-bottom: 20px;
 }
+.login {
+    border: 2px purple solid;
+}
 /* 管理TOPへのボタン*/
 .admin_top_btn {
     text-align: center;
@@ -104,11 +107,11 @@ header h1 {
 /* 削除ボタン */
 .delete_btn {
     text-align: center;
-    width: 150px;
+    width: 100px;
     display: block;
-    line-height: 2.4em; /* 高さを中央揃え …難しい*/
+    line-height: 1.5em; /* 高さを中央揃え …難しい*/
     text-decoration: none;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     border-radius: 5px;
     color: black;
@@ -257,7 +260,9 @@ nav li {
     text-align: center;
 }
 footer {
-    text-align: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
 
 /* 管理画面の表示調整 try*/
@@ -267,13 +272,14 @@ footer {
 }
 /* 管理画面の文字の大きさ調整 try */
 .item_info {
-    font-size: 70%;
+    font-size: 80%;
+    margin-left: 10px;
     border: green 2px solid;
 }
 
 /* カートのアイテム　*/
 .cart_item {
-    margin: 10px;
+    margin: 3px;
 }
 
 /* navの左右 (カートで挑戦中)*/
@@ -282,6 +288,7 @@ footer {
     border: brown 2px solid;
 }
 .right_nav {
+    display: flex;
     border: blue 2px solid;
 }
 .right_input {
@@ -291,15 +298,16 @@ footer {
 /* ユーザーTOPページの並べ方 */
 .top_items {
     display: flex;
+    justify-content: center;
+    border: pink 2px solid;
 }
 
-/* 管理者の追加ページ */
-.cover_add {
-    text-align: center;
+/* 管理画面のinputフォーム */
+.admin_form input {
+    width: 350px;
+    height: 32px;
+    margin-bottom: 20px;
 }
-.cover_add h2 {
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 35px;
-    border: purple 2px solid;
+.admin_form {
+    border: 2px purple solid;
 }

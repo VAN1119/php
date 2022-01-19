@@ -77,7 +77,7 @@
                             <p><a href="detail/<?php echo $array[0] ?>.php"><img class="" src="../images/<?php echo $array[2]?>.png" alt="表示例" width="100px"></a></p>
                             <p>商品名:<?php echo $array[1]; ?><br>金額:<?php echo $array[4]; ?>円 数量:<?php echo $array[9]; ?></p>
                             <hr>
-                            <p>合計金額:<?php echo $array[4] * $array[9]; ?></p>
+                            <p>合計金額:<?php echo $array[4] * $array[9]; ?>円</p>
                             <input type="checkbox" name="delete[]" value="<?php echo $cline; ?>">削除
                         </div>
                         <?php
@@ -110,7 +110,7 @@
                     }
                     ?>
                     </div>
-                    <input type="submit" value="削除">
+                    <input class="delete_btn" type="submit" value="削除">
                     <?php
                 } else {
                     echo "カートに商品はありません";
