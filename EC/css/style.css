@@ -9,27 +9,30 @@ body {
 }
 header {
     height: 10%;
-    /* 枠確認 */
+    /* 枠確認 *
     border: #000 solid 3px;
+    */
     /* ログアウト調整 */
     display: flex;
     justify-content: space-between;
-    border: green 2px solid;
 }
 nav {
     height: 10%;
-    /* 枠確認 */
+    /* 枠確認 
     border: #000 solid 3px;
+    */
 }
 main {
     height: 70%;
-    /* 枠確認 */
+    /* 枠確認 
     border: #000 solid 3px;
+    */
 }
 footer {
     height: 10%;
-    /* 枠確認 */
+    /* 枠確認 
     border: #000 solid 3px;
+    */
 }
 .fullheight {
     height: 100%;
@@ -309,8 +312,9 @@ footer {
 .item_info {
     font-size: 80%;
     margin-left: 10px;
-    /* 枠確認 */
+    /* 枠確認 
     border: green 2px solid;
+    */
 }
 
 /* カートのアイテム　*/
@@ -321,12 +325,15 @@ footer {
 /* navの左右 (カートで挑戦中)*/
 .left_nav {
     display: flex;
+    /* 枠確認 *
     border: brown 2px solid;
+    */
 }
 .right_nav {
     display: flex;
-    /* 枠確認 */
+    /* 枠確認 *
     border: blue 2px solid;
+    */
 }
 .right_input {
     height: 30px;
@@ -337,8 +344,9 @@ footer {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    /* 枠確認 */
+    /* 枠確認 *
     border: pink 2px solid;
+    */
 }
 
 /* 管理画面のinputフォーム */
@@ -348,6 +356,7 @@ footer {
     margin-bottom: 20px;
 }
 .admin_form {
-    /* 枠確認 */
+    /* 枠確認 *
     border: 2px purple solid;
+    */
 }

@@ -106,8 +106,9 @@
                                 $k++;
                             }
                         }
-                        header("Location:#");
                         fclose($fp);
+                        // エラーが出てしまう。解決策検討中
+                        //header("Location:#");
                     }
                     ?>
                     </div>
