@@ -16,6 +16,7 @@
 <body>
     <header>
         <h1>Electric Commerce store</h1>
+        <a class="head_btn" href="admin_login.php">ログアウト</a>
     </header>
     <nav></nav>
     <main>
@@ -23,15 +24,15 @@
             <h2>管理者トップ</h2>
         </div>
         <div class="buy_btn">
-            <a class="start_btn buy_btn2" href="../items/items_add.php">商品追加</a>
-            <a class="start_btn buy_btn2" href="../items/items_change.php">商品変更</a>
+            <a class="buy_btn2" href="../items/items_add.php">商品追加</a>
+            <a class="buy_btn2" href="../items/items_change.php">商品変更</a>
         </div>
         <div class="buy_btn">
-            <a class="start_btn buy_btn2" href="../items/items_delete.php">商品削除</a>
-            <a class="start_btn buy_btn2" href="../items/items_order.php">商品発注</a>
+            <a class="buy_btn2" href="../items/items_delete.php">商品削除</a>
+            <a class="buy_btn2" href="../items/items_order.php">商品発注</a>
         </div>
         <div class="buy_btn">
-            <a class="start_btn buy_btn2" href="admin_register.php">管理者登録</a>
+            <a class="buy_btn2" href="admin_register.php">管理者登録</a>
         </div>
     </main>
     <footer>

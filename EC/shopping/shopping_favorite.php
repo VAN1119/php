@@ -16,9 +16,7 @@
 <body>
     <header>
         <h1>Electric Commerce store</h1>
-        <div class="right_head">
-            <a class="head_btn" href="../user/user_login.php">ログアウト</a>
-        </div>
+        <a class="head_btn" href="../user/user_login.php">ログアウト</a>
     </header>
     <nav>
         <ul class="nav">
@@ -33,7 +31,6 @@
                         <input class="right_input" type="submit" name="" value="検索">
                     </form>
                 </li>
-                <li><a class="nav_btn" href="../user/user_login.php">ログアウト</a></li>
             </div>
             <?php
             if (isset($_POST["search"])) {
