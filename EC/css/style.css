@@ -9,28 +9,58 @@ body {
 }
 header {
     height: 10%;
+    /* 枠確認 */
     border: #000 solid 3px;
+    /* ログアウト調整 */
+    display: flex;
 }
 nav {
     height: 10%;
+    /* 枠確認 */
     border: #000 solid 3px;
 }
 main {
     height: 70%;
+    /* 枠確認 */
     border: #000 solid 3px;
 }
 footer {
     height: 10%;
+    /* 枠確認 */
     border: #000 solid 3px;
 }
 .fullheight {
     height: 100%;
     background: #bbddff;
-  }
+}
 header h1 {
     font-family: 'Indie Flower', cursive;
     font-size: 50px;
     font-weight: bold;
+}
+header .right_head {
+    text-align: right;
+}
+header .head_btn {
+    display: inline-block;
+}
+.start_btn{
+    text-align: center;
+    width: 300px;
+    display: block;
+    line-height: 5.4em; /* 高さを中央揃え …難しい*/
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+    border: 3px solid black;
+    margin: 0 50px;
+}
+.start_btn:hover {
+    color:white;
+    background-color: black;
 }
 .btn-cover {
     position: absolute;
@@ -58,9 +88,6 @@ header h1 {
     width: 300px;
     height: 45px;
     margin-bottom: 20px;
-}
-.login {
-    border: 2px purple solid;
 }
 /* 管理TOPへのボタン*/
 .admin_top_btn {
@@ -124,23 +151,6 @@ header h1 {
     color:white;
     background-color: black;
 }
-
-.start_btn{
-    text-align: center;
-    font-weight: bold;
-    font-size: 20px;
-    width: 250px;
-    display: block;
-    line-height: 2.4em; /* 高さを中央揃え …難しい*/
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 5px;
-    color: black;
-    background-color: white;
-    border: 3px solid black;
-    margin: 0 50px;
-}
 /* navのボタンと位置*/
 .nav_btn {
     text-align: center;
@@ -197,10 +207,6 @@ nav li {
     border: 3px solid black;
     margin: 0 auto;
 }
-.start_btn:hover {
-    color:white;
-    background-color: black;
-}
 .nav {
     display: flex;
     justify-content: space-around;
@@ -234,10 +240,6 @@ nav li {
 }
 .buy_btn2 {
     margin: 10px 20px;
-}
-.wrap_btn {
-    border: 2px green solid;
-    display:flex;
 }
 .btn a {
     margin: 0 auto;
@@ -274,6 +276,7 @@ footer {
 .item_info {
     font-size: 80%;
     margin-left: 10px;
+    /* 枠確認 */
     border: green 2px solid;
 }
 
@@ -289,6 +292,7 @@ footer {
 }
 .right_nav {
     display: flex;
+    /* 枠確認 */
     border: blue 2px solid;
 }
 .right_input {
@@ -299,6 +303,8 @@ footer {
 .top_items {
     display: flex;
     justify-content: center;
+    align-items: flex-end;
+    /* 枠確認 */
     border: pink 2px solid;
 }
 
@@ -309,5 +315,6 @@ footer {
     margin-bottom: 20px;
 }
 .admin_form {
+    /* 枠確認 */
     border: 2px purple solid;
 }

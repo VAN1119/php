@@ -16,6 +16,9 @@
 <body>
     <header>
         <h1>Electric Commerce store</h1>
+        <div class="right_head">
+            <a class="head_btn" href="../user/user_login.php">ログアウト</a>
+        </div>
     </header>
     <nav>
         <ul class="nav">

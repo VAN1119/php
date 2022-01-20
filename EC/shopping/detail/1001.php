@@ -108,6 +108,9 @@
         if (isset($_POST["count"])) {
             $count = $_POST["count"];
         }
+        if (isset($_POST["cart"])) {
+            $cart = $_POST["cart"];
+        }
         if (isset($_POST["favorite"])) {
             $favorite = "お気に入り";
         }
@@ -115,16 +118,14 @@
             $filecart = "../../csv/cart.csv";
             $fp = fopen($filecart, "a");
             fwrite($fp, $item_info.",".$count.PHP_EOL);
-            // 必要項目：数量、商品名、単価
             fclose($fp);
             echo "カートへ追加しました。";
-        } else if (empty($count) && empty($favorite)) {
+        } else if (empty($count) && empty($favorite) && !empty($cart)) {
             echo "数量を入力してください。";
         } else {
             $filefavo = "../../csv/favorite.csv";
             $fp = fopen($filefavo, "a");
             fwrite($fp, $item_info.PHP_EOL);
-            // 必要項目：商品名、単価、商品画像名
             fclose($fp);
             echo "お気に入りへ追加しました。";
         }
