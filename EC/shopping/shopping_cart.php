@@ -107,8 +107,7 @@
                             }
                         }
                         fclose($fp);
-                        // エラーが出てしまう。解決策検討中
-                        //header("Location:#");
+                        header("Location:shopping_cart.php");
                     }
                     ?>
                     </div>

@@ -82,6 +82,8 @@
                     fwrite($fp, $i.",".$i_name.",".$i_pic.",".$i_comment.",".$i_price.",".$i_count.","."0".","."5".",".$date.PHP_EOL);
                     fclose($fp);
                     echo "商品追加しました。<br><br>";
+                } else {
+                    echo "全て記入してください。<br><br>";
                 }
                 ?>
                 </p>

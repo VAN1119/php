@@ -102,7 +102,7 @@
                         }
                     }
                     fclose($fp);
-                    header("Location:#");
+                    header("Location:shopping_favorite.php");
                 }
                 ?>
                 </div>
