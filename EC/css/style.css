@@ -301,6 +301,12 @@ footer {
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    color: #fff;
+    background-color: #000;
+}
+footer small {
+    color: #fff;
+    background-color: #000;
 }
 
 /* 管理画面の表示調整 try*/
