@@ -53,7 +53,7 @@ header .head_btn {
     text-align: center;
     width: 120px;
     display: block;
-    line-height: 1.5em; /* 高さを中央揃え …難しい*/
+    line-height: 1.5em; /* 高さを中央揃え …難しい */
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
@@ -197,14 +197,14 @@ header .head_btn:hover {
 nav li {
     margin: 10px;
 }
-/* favo_btn*/
+/* favo_btn
 .obtn {
     text-align: center;
     font-weight: bold;
     font-size: 20px;
     width: 150px;
     display: block;
-    line-height: 1.2em; /* 高さを中央揃え …難しい*/
+    line-height: 1.2em; /* 高さを中央揃え …難しい*
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
@@ -213,7 +213,8 @@ nav li {
     background-color: white;
     border: 3px solid black;
 }
-/* cart_btn */
+*/
+/* カートの購入ボタン */
 .cbtn {
     text-align: center;
     width: 250px;
@@ -228,6 +229,11 @@ nav li {
     border: 3px solid black;
     margin: 0 auto;
 }
+.cbtn:hover {
+    color:white;
+    background-color: black;
+}
+
 .nav {
     display: flex;
     justify-content: space-around;
@@ -301,8 +307,6 @@ footer {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    color: #fff;
-    background-color: #000;
 }
 footer small {
     color: #fff;

@@ -16,6 +16,7 @@
 <body>
     <header>
         <h1>Electric Commerce store</h1>
+        <a class="head_btn" href="../index.php">TOP</a>
     </header>
     <nav>
     </nav>
