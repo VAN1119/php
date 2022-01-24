@@ -33,6 +33,9 @@ footer {
     /* 枠確認 
     border: #000 solid 3px;
     */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
 .fullheight {
     height: 100%;
@@ -42,48 +45,6 @@ header h1 {
     font-family: 'Indie Flower', cursive;
     font-size: 50px;
     font-weight: bold;
-}
-/*
-header .right_head {
-    text-align: right;
-    border: yellow 2px solid;
-}
-*/
-header .head_btn {
-    text-align: center;
-    width: 120px;
-    display: block;
-    line-height: 1.5em; /* 高さを中央揃え …難しい */
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
-    color: black;
-    background-color: white;
-    border: 3px solid black;
-    margin: 15px;
-}
-header .head_btn:hover {
-    color:white;
-    background-color: black;
-}
-.start_btn{
-    text-align: center;
-    width: 300px;
-    display: block;
-    line-height: 5.4em; /* 高さを中央揃え …難しい*/
-    text-decoration: none;
-    font-size: 30px;
-    font-weight: bold;
-    border-radius: 5px;
-    color: black;
-    background-color: white;
-    border: 3px solid black;
-    margin: 0 50px;
-}
-.start_btn:hover {
-    color:white;
-    background-color: black;
 }
 .btn-cover {
     position: absolute;
@@ -112,6 +73,161 @@ header .head_btn:hover {
     height: 45px;
     margin-bottom: 20px;
 }
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+}
+.item_detail {
+    text-align: center;
+}
+.item_name, .item_comment {
+    text-align: left;
+}
+.item_explain{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.item_img {
+    margin: 0 180px;
+}
+.item_name {
+    font-size: 35px;
+    margin: 15px;
+}
+.item_price {
+    font-size: 20px;
+    text-align: right;
+    margin: 10px;
+}
+.buy_btn {
+    display:flex;
+    justify-content: center;
+}
+
+.btn a {
+    margin: 0 auto;
+}
+.item_favorite, .item_search {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+.ans {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0 auto;
+    text-align: center;
+}
+.total_price {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+.copyright {
+    color: #fff;
+    background-color: #000;
+}
+
+/* 管理画面の表示調整 try*/
+.items_cover {
+    display: flex;
+    justify-content: center;
+}
+/* 管理画面の文字の大きさ調整 try */
+.item_info {
+    font-size: 80%;
+    margin-left: 10px;
+    /* 枠確認 
+    border: green 2px solid;
+    */
+}
+
+/* カートのアイテム　*/
+.cart_item {
+    margin: 3px;
+}
+
+/* navの左右*/
+.left_nav, .right_nav {
+    display: flex;
+    /* 枠確認 *
+    border: brown 2px solid;
+    */
+}
+.right_input {
+    height: 30px;
+}
+
+/* ユーザーTOPページの並べ方 */
+.top_items {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* 枠確認 *
+    border: pink 2px solid;
+    */
+}
+
+/* 管理画面のinputフォーム */
+.admin_form input {
+    width: 350px;
+    height: 32px;
+    margin-bottom: 20px;
+}
+.admin_form {
+    /* 枠確認 *
+    border: 2px purple solid;
+    */
+}
+
+
+
+
+
+/* btn(ボタン)一覧 */
+/* 最初の画面のボタン */
+.start_btn{
+    text-align: center;
+    width: 300px;
+    display: block;
+    line-height: 5.4em; /* 高さを中央揃え …難しい*/
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+    border: 3px solid black;
+    margin: 0 50px;
+}
+.start_btn:hover {
+    color:white;
+    background-color: black;
+}
+
+/* ロゴ列右隅のログアウト(TOP)ボタン */
+header .head_btn {
+    text-align: center;
+    width: 120px;
+    display: block;
+    line-height: 1.5em; /* 高さを中央揃え …難しい */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+    border: 3px solid black;
+    margin: 15px;
+}
+header .head_btn:hover {
+    color:white;
+    background-color: black;
+}
+
 /* 管理TOPへのボタン*/
 .admin_top_btn {
     text-align: center;
@@ -133,7 +249,8 @@ header .head_btn:hover {
     color:white;
     background-color: black;
 }
-/* 詳細画面ボタン */
+
+/* 詳細画面のボタン(カート、お気に入りetc) */
 .detail_btn {
     text-align: center;
     width: 250px;
@@ -174,7 +291,8 @@ header .head_btn:hover {
     color:white;
     background-color: black;
 }
-/* navのボタンと位置*/
+
+/* ナビボタン(TOP画面、お気に入り、検索)*/
 .nav_btn {
     text-align: center;
     width: 150px;
@@ -193,28 +311,11 @@ header .head_btn:hover {
     color:white;
     background-color: black;
 }
-
 nav li {
     margin: 10px;
 }
-/* favo_btn
-.obtn {
-    text-align: center;
-    font-weight: bold;
-    font-size: 20px;
-    width: 150px;
-    display: block;
-    line-height: 1.2em; /* 高さを中央揃え …難しい*
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 5px;
-    color: black;
-    background-color: white;
-    border: 3px solid black;
-}
-*/
-/* カートの購入ボタン */
+
+/* 購入ボタン */
 .cbtn {
     text-align: center;
     width: 250px;
@@ -234,37 +335,7 @@ nav li {
     background-color: black;
 }
 
-.nav {
-    display: flex;
-    justify-content: space-around;
-}
-.item_detail {
-    text-align: center;
-}
-.item_name, .item_comment {
-    text-align: left;
-}
-.item_explain{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-.item_img {
-    margin: 0 180px;
-}
-.item_name {
-    font-size: 35px;
-    margin: 15px;
-}
-.item_price {
-    font-size: 20px;
-    text-align: right;
-    margin: 10px;
-}
-.buy_btn {
-    display:flex;
-    justify-content: center;
-}
+/* 【検索中】 */
 .buy_btn2 {
     text-align: center;
     width: 250px;
@@ -283,90 +354,13 @@ nav li {
     color:white;
     background-color: black;
 }
-.btn a {
-    margin: 0 auto;
-}
-.item_favorite, .item_search {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    flex-wrap: wrap;
-}
-.ans {
-    font-size: 25px;
-    font-weight: bold;
-    margin: 0 auto;
-    text-align: center;
-}
-.total_price {
-    font-size: 50px;
-    font-weight: bold;
-    text-align: center;
-}
-footer {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
-footer small {
-    color: #fff;
-    background-color: #000;
-}
+/* header_btn */
+/* header_btn */
+/* header_btn */
+/* header_btn */
+/* header_btn */
+/* header_btn */
+/* header_btn */
+/* header_btn */
+/* header_btn */
 
-/* 管理画面の表示調整 try*/
-.items_cover {
-    display: flex;
-    justify-content: center;
-}
-/* 管理画面の文字の大きさ調整 try */
-.item_info {
-    font-size: 80%;
-    margin-left: 10px;
-    /* 枠確認 
-    border: green 2px solid;
-    */
-}
-
-/* カートのアイテム　*/
-.cart_item {
-    margin: 3px;
-}
-
-/* navの左右 (カートで挑戦中)*/
-.left_nav {
-    display: flex;
-    /* 枠確認 *
-    border: brown 2px solid;
-    */
-}
-.right_nav {
-    display: flex;
-    /* 枠確認 *
-    border: blue 2px solid;
-    */
-}
-.right_input {
-    height: 30px;
-}
-
-/* ユーザーTOPページの並べ方 */
-.top_items {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    /* 枠確認 *
-    border: pink 2px solid;
-    */
-}
-
-/* 管理画面のinputフォーム */
-.admin_form input {
-    width: 350px;
-    height: 32px;
-    margin-bottom: 20px;
-}
-.admin_form {
-    /* 枠確認 *
-    border: 2px purple solid;
-    */
-}
