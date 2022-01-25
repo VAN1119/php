@@ -30,7 +30,7 @@
                     <input type="submit" name="submit" value="ログイン">
                 </div>
             </form>
-            <div class="ligin_b">
+            <div class="cover">
                 <hr width="300px">
                 <p>初めての方はこちら</p>
                 <p><a href="user_register.php">アカウント新規登録</a></p>

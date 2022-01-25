@@ -102,9 +102,9 @@
         </div>
     </main>
     <footer>
-        <div class="copyright">
+        <p class="copyright">
             <small>&copy;2021 Ban</small>
-        </div>
+        </p>
     </footer>
 </body>
 </html>

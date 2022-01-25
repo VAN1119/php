@@ -22,6 +22,24 @@ nav {
     border: #000 solid 3px;
     */
 }
+nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+nav ul li {
+    margin: 10px;
+}
+/* navの左右*/
+.left_nav, .right_nav {
+    display: flex;
+    /* 枠確認 *
+    border: brown 2px solid;
+    */
+}
+/* nav右側のフォーム */
+.right_input {
+    height: 30px;
+}
 main {
     height: 70%;
     /* 枠確認 
@@ -29,7 +47,7 @@ main {
     */
 }
 footer {
-    height: 9%;
+    height: 10%;
     /* 枠確認 
     border: #000 solid 3px;
     */
@@ -37,6 +55,12 @@ footer {
     align-items: flex-end;
     justify-content: center;
 }
+.copyright {
+    color: #fff;
+    background-color: #000;
+    width: 500%;
+}
+
 .fullheight {
     height: 100%;
     background: #bbddff;
@@ -46,15 +70,17 @@ header h1 {
     font-size: 50px;
     font-weight: bold;
 }
+/* indexのボタン配置 */
 .btn-cover {
-    position: absolute;
+/*    position: absolute;
     left: 5%;
     top: 40%;
-    display: flex;
     width: 90%;
     height: auto;
-    margin: auto;
+    margin: auto; */
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
 .cover {
     text-align: center;
@@ -64,9 +90,6 @@ header h1 {
     font-weight: bold;
     margin-bottom: 35px;
 }
-.ligin_b {
-    text-align: center;
-}
 /* itemsのフォーム部分 */
 .login input {
     width: 300px;
@@ -74,10 +97,7 @@ header h1 {
     margin-bottom: 20px;
 }
 
-.nav {
-    display: flex;
-    justify-content: space-around;
-}
+
 .item_detail {
     text-align: center;
 }
@@ -126,10 +146,7 @@ header h1 {
     font-weight: bold;
     text-align: center;
 }
-.copyright {
-    color: #fff;
-    background-color: #000;
-}
+
 
 /* 管理画面の表示調整 try*/
 .items_cover {
@@ -150,16 +167,6 @@ header h1 {
     margin: 3px;
 }
 
-/* navの左右*/
-.left_nav, .right_nav {
-    display: flex;
-    /* 枠確認 *
-    border: brown 2px solid;
-    */
-}
-.right_input {
-    height: 30px;
-}
 
 /* ユーザーTOPページの並べ方 */
 .top_items {
@@ -177,15 +184,6 @@ header h1 {
     height: 32px;
     margin-bottom: 20px;
 }
-.admin_form {
-    /* 枠確認 *
-    border: 2px purple solid;
-    */
-}
-
-
-
-
 
 /* btn(ボタン)一覧 */
 /* 最初の画面のボタン */
@@ -311,9 +309,6 @@ header .head_btn:hover {
     color:white;
     background-color: black;
 }
-nav li {
-    margin: 10px;
-}
 
 /* 購入ボタン */
 .cbtn {
@@ -354,13 +349,3 @@ nav li {
     color:white;
     background-color: black;
 }
-/* header_btn */
-/* header_btn */
-/* header_btn */
-/* header_btn */
-/* header_btn */
-/* header_btn */
-/* header_btn */
-/* header_btn */
-/* header_btn */
-

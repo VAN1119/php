@@ -25,7 +25,9 @@
         </div>
     </main>
     <footer>
-        <small>&copy;2021 Ban</small>
+        <div class="copyright">
+            <small>&copy;2021 Ban</small>
+        </div>
     </footer>
 </body>
 </html>
