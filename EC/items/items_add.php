@@ -16,11 +16,11 @@
 <body>
     <header>
         <h1>Electric Commerce store</h1>
-        <a class="head_btn" href="../admin/admin_login.php">ログアウト</a>
+        <a class="head_btn btn" href="../admin/admin_login.php">ログアウト</a>
     </header>
     <nav>
         <div class="buy_btn">
-            <a class="admin_top_btn" href="../admin/admin_top.php">管理トップ</a>
+            <a class="admin_top_btn btn" href="../admin/admin_top.php">管理トップ</a>
         </div>
     </nav>
     <main>

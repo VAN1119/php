@@ -16,13 +16,13 @@
 <body>
     <header>
         <h1>Electric Commerce store</h1>
-        <a class="head_btn" href="../user/user_login.php">ログアウト</a>
+        <a class="head_btn btn" href="../user/user_login.php">ログアウト</a>
     </header>
     <nav>
         <ul class="nav">
             <div class="left_nav">
-                <li><a class="nav_btn" href="../user/user_top.php">トップ画面</a></li>
-                <li><a class="nav_btn" href="shopping_favorite.php">お気に入り</a></li>
+                <li><a class="nav_btn btn" href="../user/user_top.php">トップ画面</a></li>
+                <li><a class="nav_btn btn" href="shopping_favorite.php">お気に入り</a></li>
             </div>
             <div class="right_nav">
                 <li>

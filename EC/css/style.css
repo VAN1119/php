@@ -9,18 +9,12 @@ body {
 }
 header {
     height: 10%;
-    /* 枠確認 *
-    border: #000 solid 3px;
-    */
     /* ログアウト調整 */
     display: flex;
     justify-content: space-between;
 }
 nav {
     height: 10%;
-    /* 枠確認 
-    border: #000 solid 3px;
-    */
 }
 nav ul {
     display: flex;
@@ -32,9 +26,6 @@ nav ul li {
 /* navの左右*/
 .left_nav, .right_nav {
     display: flex;
-    /* 枠確認 *
-    border: brown 2px solid;
-    */
 }
 /* nav右側のフォーム */
 .right_input {
@@ -42,15 +33,9 @@ nav ul li {
 }
 main {
     height: 70%;
-    /* 枠確認 
-    border: #000 solid 3px;
-    */
 }
 footer {
     height: 10%;
-    /* 枠確認 
-    border: #000 solid 3px;
-    */
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -60,7 +45,6 @@ footer {
     background-color: #000;
     width: 500%;
 }
-
 .fullheight {
     height: 100%;
     background: #bbddff;
@@ -72,12 +56,6 @@ header h1 {
 }
 /* indexのボタン配置 */
 .btn-cover {
-/*    position: absolute;
-    left: 5%;
-    top: 40%;
-    width: 90%;
-    height: auto;
-    margin: auto; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,88 +74,75 @@ header h1 {
     height: 45px;
     margin-bottom: 20px;
 }
-
-
 .item_detail {
     text-align: center;
 }
-.item_name, .item_comment {
-    text-align: left;
-}
+/* 商品詳細ページの商品説明 */
 .item_explain{
     display: flex;
     justify-content: center;
     width: 100%;
 }
-.item_img {
-    margin: 0 180px;
+/* 商品詳細ページの商品名、コメント */
+.item_name, .item_comment {
+    text-align: left;
 }
+/* 商品詳細ページの商品名 */
 .item_name {
     font-size: 35px;
     margin: 15px;
 }
+/* 商品詳細ページの画像 */
+.item_img {
+    margin: 0 180px;
+}
+/* 商品詳細ページの価格 */
 .item_price {
     font-size: 20px;
     text-align: right;
     margin: 10px;
 }
-.buy_btn {
-    display:flex;
-    justify-content: center;
-}
-
-.btn a {
-    margin: 0 auto;
-}
+/* お気に入りページ、検索ページ */
 .item_favorite, .item_search {
     display: flex;
     justify-content: center;
     align-items: flex-end;
     flex-wrap: wrap;
 }
+/* 管理画面フォーム送信後の文字 */
 .ans {
     font-size: 25px;
     font-weight: bold;
     margin: 0 auto;
     text-align: center;
 }
+/* 管理画面の商品詳細内容 */
+.item_info {
+    font-size: 80%;
+    margin-left: 10px;
+}
+/* 合計金額 */
 .total_price {
     font-size: 50px;
     font-weight: bold;
     text-align: center;
 }
-
-
-/* 管理画面の表示調整 try*/
-.items_cover {
+/* 管理画面の表示調整*/
+/* 画面詳細のボタンのカバー、管理画面の各ページのnav(TOPボタン)カバー、管理画面TOPの配置 */
+.items_cover, .buy_btn {
     display: flex;
     justify-content: center;
 }
-/* 管理画面の文字の大きさ調整 try */
-.item_info {
-    font-size: 80%;
-    margin-left: 10px;
-    /* 枠確認 
-    border: green 2px solid;
-    */
-}
-
 /* カートのアイテム　*/
 .cart_item {
     margin: 3px;
 }
-
-
 /* ユーザーTOPページの並べ方 */
 .top_items {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    /* 枠確認 *
-    border: pink 2px solid;
-    */
 }
-
 /* 管理画面のinputフォーム */
 .admin_form input {
     width: 350px;
@@ -201,13 +166,14 @@ header h1 {
     border: 3px solid black;
     margin: 0 50px;
 }
+/*
 .start_btn:hover {
     color:white;
     background-color: black;
 }
-
+*/
 /* ロゴ列右隅のログアウト(TOP)ボタン */
-header .head_btn {
+.head_btn {
     text-align: center;
     width: 120px;
     display: block;
@@ -221,10 +187,12 @@ header .head_btn {
     border: 3px solid black;
     margin: 15px;
 }
-header .head_btn:hover {
+/*
+.head_btn:hover {
     color:white;
     background-color: black;
 }
+*/
 
 /* 管理TOPへのボタン*/
 .admin_top_btn {
@@ -243,10 +211,12 @@ header .head_btn:hover {
     border: 3px solid black;
     margin: 5px;
 }
+/*
 .admin_top_btn:hover {
     color:white;
     background-color: black;
 }
+*/
 
 /* 詳細画面のボタン(カート、お気に入りetc) */
 .detail_btn {
@@ -264,10 +234,12 @@ header .head_btn:hover {
     margin: 5px;
     cursor: pointer;
 }
+/*
 .detail_btn:hover {
     color:white;
     background-color: black;
 }
+*/
 
 /* 削除ボタン */
 .delete_btn {
@@ -285,10 +257,12 @@ header .head_btn:hover {
     margin: 0px auto;
     cursor: pointer;
 }
+/*
 .delete_btn:hover {
     color:white;
     background-color: black;
 }
+*/
 
 /* ナビボタン(TOP画面、お気に入り、検索)*/
 .nav_btn {
@@ -305,13 +279,15 @@ header .head_btn:hover {
     background-color: white;
     border: 3px solid black;
 }
+/*
 .nav_btn:hover {
     color:white;
     background-color: black;
 }
+*/
 
 /* 購入ボタン */
-.cbtn {
+.cart_btn {
     text-align: center;
     width: 250px;
     display: block;
@@ -325,13 +301,15 @@ header .head_btn:hover {
     border: 3px solid black;
     margin: 0 auto;
 }
-.cbtn:hover {
+/*
+.cart_btn:hover {
     color:white;
     background-color: black;
 }
+*/
 
-/* 【検索中】 */
-.buy_btn2 {
+/* 管理画面TOPページのボタン */
+.admin_btn {
     text-align: center;
     width: 250px;
     display: block;
@@ -345,7 +323,14 @@ header .head_btn:hover {
     border: 3px solid black;
     margin: 10px 20px;
 }
-.buy_btn2:hover {
+/*
+.admin_btn:hover {
+    color:white;
+    background-color: black;
+}
+*/
+
+.btn:hover {
     color:white;
     background-color: black;
 }

@@ -20,8 +20,8 @@
     <nav></nav>
     <main>
         <div class="btn-cover">
-            <a class="start_btn" href="user/user_login.php">ユーザー</a>
-            <a class="start_btn" href="admin/admin_login.php">管理者</a>
+            <a class="start_btn btn" href="user/user_login.php">ユーザー</a>
+            <a class="start_btn btn" href="admin/admin_login.php">管理者</a>
         </div>
     </main>
     <footer>
