@@ -58,25 +58,6 @@
                 if (isset($_POST["edit"])) {
                     $edit = $_POST["edit"];
                 }
-                /* if (!empty($i_name) && !empty($i_comment) && !empty($i_price) && !empty($i_count) && empty($edit)) {
-                    // 投稿番号取得
-                    if(file_exists($filename)){
-                        $lines = file($filename,FILE_IGNORE_NEW_LINES);
-                        $i = count(file($filename)) + 1;
-                        for ($k = 0; $k < count($lines); $k++) {
-                            $line = explode(",", $lines[$k]);
-                            if ($line[0] >= $i) {
-                                $i = $line[0] + 1;
-                            }
-                        }
-                    } else {
-                        $i = 1001;
-                    }
-                    $fp = fopen($filename, "a");
-                    fwrite($fp, $i.",".$i_name.",".$i_comment.",".$i_price.",".$i_count.","."1".","."5".",".$date.PHP_EOL);
-                    fclose($fp);
-                    echo "商品追加しました。<br><br>";
-                } else */
                 if (!empty($i_name) || !empty($i_pic) || !empty($i_comment) || !empty($i_price) || !empty($i_count)) {
                     if (!empty($edit)) {
                         $flag = 0;

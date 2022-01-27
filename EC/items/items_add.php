@@ -53,37 +53,39 @@
                 if (isset($_POST["i_count"])) {
                     $i_count = $_POST["i_count"];
                 }
-                if (!empty($i_name) && !empty($i_pic) && !empty($i_comment) && !empty($i_price) && !empty($i_count)) {
-                    // 投稿番号取得
-                    if(file_exists($filename)){
-                        $i = 1001;
-                        $max = $i;
-                        $lines = file($filename);
-                        foreach ($lines as $line) {
-                            $array = explode(",", $line);
-                            if ($array[0] >= $max) {
-                                $max = $array[0] + 1;
+                if (!empty($i_name) || !empty($i_pic) || !empty($i_comment) || !empty($i_price) || !empty($i_count)) {
+                    if (!empty($i_name) && !empty($i_pic) && !empty($i_comment) && !empty($i_price) && !empty($i_count)) {
+                        // 投稿番号取得
+                        if(file_exists($filename)){
+                            $i = 1001;
+                            $max = $i;
+                            $lines = file($filename);
+                            foreach ($lines as $line) {
+                                $array = explode(",", $line);
+                                if ($array[0] >= $max) {
+                                    $max = $array[0] + 1;
+                                }
+                                $i = $max;
                             }
-                            $i = $max;
+                            /* for ($k = 0; $k < count($lines); $k++) {
+                                $line = explode(",", $lines[$k]);
+                                $max = $line[0]; 
+                                if ($line[0] >= $max) {
+                                    $max = $line[0] + 1;
+                                }
+                                $i = $max;
+                            } */
+                        } else {
+                            $i = 1001;
                         }
-                        /* for ($k = 0; $k < count($lines); $k++) {
-                            $line = explode(",", $lines[$k]);
-                            $max = $line[0]; 
-                            if ($line[0] >= $max) {
-                                $max = $line[0] + 1;
-                            }
-                            $i = $max;
-                        } */
+                        // ファイル処理
+                        $fp = fopen($filename, "a");
+                        fwrite($fp, $i.",".$i_name.",".$i_pic.",".$i_comment.",".$i_price.",".$i_count.","."0".","."5".",".$date.PHP_EOL);
+                        fclose($fp);
+                        echo "商品追加しました。<br><br>";
                     } else {
-                        $i = 1001;
+                        echo "全て記入してください。<br><br>";
                     }
-                    // ファイル処理
-                    $fp = fopen($filename, "a");
-                    fwrite($fp, $i.",".$i_name.",".$i_pic.",".$i_comment.",".$i_price.",".$i_count.","."0".","."5".",".$date.PHP_EOL);
-                    fclose($fp);
-                    echo "商品追加しました。<br><br>";
-                } else {
-                    echo "全て記入してください。<br><br>";
                 }
                 ?>
                 </p>

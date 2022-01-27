@@ -16,7 +16,7 @@
 <body>
     <header>
         <h1>Electric Commerce store</h1>
-        <a class="head_btn btn" href="../user/user_login.php">ログアウト</a>
+        <a class="head_btn btn" href="../../user/user_login.php">ログアウト</a>
     </header>
     <nav>
         <ul class="nav">
@@ -110,25 +110,27 @@
             $count = $_POST["count"];
         }
         if (isset($_POST["cart"])) {
-            $cart = $_POST["cart"];
+            $cart = "カート";
         }
         if (isset($_POST["favorite"])) {
             $favorite = "お気に入り";
         }
-        if (!empty($count)) {
-            $filecart = "../../csv/cart.csv";
-            $fp = fopen($filecart, "a");
-            fwrite($fp, $item_info.",".$count.PHP_EOL);
-            fclose($fp);
-            echo "カートへ追加しました。";
-        } else if (empty($count) && empty($favorite)) {
-            echo "数量を入力してください。";
-        } else {
-            $filefavo = "../../csv/favorite.csv";
-            $fp = fopen($filefavo, "a");
-            fwrite($fp, $item_info.PHP_EOL);
-            fclose($fp);
-            echo "お気に入りへ追加しました。";
+        if (!empty($count) || !empty($cart) || !empty($favorite)) {
+            if (!empty($count)) {
+                $filecart = "../../csv/cart.csv";
+                $fp = fopen($filecart, "a");
+                fwrite($fp, $item_info.",".$count.PHP_EOL);
+                fclose($fp);
+                echo "カートへ追加しました。";
+            } else if (empty($count) && empty($favorite)) {
+                echo "数量を入力してください。";
+            } else {
+                $filefavo = "../../csv/favorite.csv";
+                $fp = fopen($filefavo, "a");
+                fwrite($fp, $item_info.PHP_EOL);
+                fclose($fp);
+                echo "お気に入りへ追加しました。";
+            }
         }
         ?>
         </p>

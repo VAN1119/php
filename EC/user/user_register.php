@@ -16,7 +16,7 @@
 <body>
     <header>
         <h1>Electric Commerce store</h1>
-        <a class="head_btn btn" href="../index.php">TOP</a>
+        <a class="head_btn btn" href="user_login.php">ログイン画面</a>
     </header>
     <nav>
     </nav>

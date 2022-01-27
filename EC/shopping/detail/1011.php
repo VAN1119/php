@@ -16,13 +16,13 @@
 <body>
     <header>
         <h1>Electric Commerce store</h1>
-        <a class="head_btn" href="../user/user_login.php">ログアウト</a>
+        <a class="head_btn btn" href="../../user/user_login.php">ログアウト</a>
     </header>
     <nav>
         <ul class="nav">
             <div class="left_nav">
-                <li><a class="nav_btn" href="../../user/user_top.php">トップ画面</a></li>
-                <li><a class="nav_btn" href="../shopping_favorite.php">お気に入り</a></li>
+                <li><a class="nav_btn btn" href="../../user/user_top.php">トップ画面</a></li>
+                <li><a class="nav_btn btn" href="../shopping_favorite.php">お気に入り</a></li>
             </div>
             <div class="right_nav">
                 <li>
@@ -91,15 +91,15 @@
         </div>
         <form method="POST" action="">
         <div class="buy_btn">
-                <input class="detail_btn" type="number" name="count" placeholder="数量" value="">
-                <input class="detail_btn" type="submit" name="cart" value="カートへ追加">
+                <input class="detail_btn btn" type="number" name="count" placeholder="数量" value="">
+                <input class="detail_btn btn" type="submit" name="cart" value="カートへ追加">
         </div>
         </form>
         <div class="buy_btn">
             <form method="POST" action="">
-            <input class="detail_btn" type="submit" name="favorite" value="お気に入りへ追加">
+            <input class="detail_btn btn" type="submit" name="favorite" value="お気に入りへ追加">
             </form>
-            <a class="detail_btn" href="../shopping_cart.php">カートへ移動</a>
+            <a class="detail_btn btn" href="../shopping_cart.php">カートへ移動</a>
         </div>
         <p class="ans">
         <?php
@@ -110,25 +110,27 @@
             $count = $_POST["count"];
         }
         if (isset($_POST["cart"])) {
-            $cart = $_POST["cart"];
+            $cart = "カート";
         }
         if (isset($_POST["favorite"])) {
             $favorite = "お気に入り";
         }
-        if (!empty($count)) {
-            $filecart = "../../csv/cart.csv";
-            $fp = fopen($filecart, "a");
-            fwrite($fp, $item_info.",".$count.PHP_EOL);
-            fclose($fp);
-            echo "カートへ追加しました。";
-        } else if (empty($count) && empty($favorite)) {
-            echo "数量を入力してください。";
-        } else {
-            $filefavo = "../../csv/favorite.csv";
-            $fp = fopen($filefavo, "a");
-            fwrite($fp, $item_info.PHP_EOL);
-            fclose($fp);
-            echo "お気に入りへ追加しました。";
+        if (!empty($count) || !empty($cart) || !empty($favorite)) {
+            if (!empty($count)) {
+                $filecart = "../../csv/cart.csv";
+                $fp = fopen($filecart, "a");
+                fwrite($fp, $item_info.",".$count.PHP_EOL);
+                fclose($fp);
+                echo "カートへ追加しました。";
+            } else if (empty($count) && empty($favorite)) {
+                echo "数量を入力してください。";
+            } else {
+                $filefavo = "../../csv/favorite.csv";
+                $fp = fopen($filefavo, "a");
+                fwrite($fp, $item_info.PHP_EOL);
+                fclose($fp);
+                echo "お気に入りへ追加しました。";
+            }
         }
         ?>
         </p>
