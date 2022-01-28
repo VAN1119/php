@@ -166,12 +166,7 @@ header h1 {
     border: 3px solid black;
     margin: 0 50px;
 }
-/*
-.start_btn:hover {
-    color:white;
-    background-color: black;
-}
-*/
+
 /* ロゴ列右隅のログアウト(TOP)ボタン */
 .head_btn {
     text-align: center;
@@ -187,12 +182,6 @@ header h1 {
     border: 3px solid black;
     margin: 15px;
 }
-/*
-.head_btn:hover {
-    color:white;
-    background-color: black;
-}
-*/
 
 /* 管理TOPへのボタン*/
 .admin_top_btn {
@@ -211,12 +200,6 @@ header h1 {
     border: 3px solid black;
     margin: 5px;
 }
-/*
-.admin_top_btn:hover {
-    color:white;
-    background-color: black;
-}
-*/
 
 /* 詳細画面のボタン(カート、お気に入りetc) */
 .detail_btn {
@@ -234,12 +217,6 @@ header h1 {
     margin: 5px;
     cursor: pointer;
 }
-/*
-.detail_btn:hover {
-    color:white;
-    background-color: black;
-}
-*/
 
 /* 削除ボタン */
 .delete_btn {
@@ -257,12 +234,6 @@ header h1 {
     margin: 0px auto;
     cursor: pointer;
 }
-/*
-.delete_btn:hover {
-    color:white;
-    background-color: black;
-}
-*/
 
 /* ナビボタン(TOP画面、お気に入り、検索)*/
 .nav_btn {
@@ -279,12 +250,6 @@ header h1 {
     background-color: white;
     border: 3px solid black;
 }
-/*
-.nav_btn:hover {
-    color:white;
-    background-color: black;
-}
-*/
 
 /* 購入ボタン */
 .cart_btn {
@@ -301,12 +266,6 @@ header h1 {
     border: 3px solid black;
     margin: 0 auto;
 }
-/*
-.cart_btn:hover {
-    color:white;
-    background-color: black;
-}
-*/
 
 /* 管理画面TOPページのボタン */
 .admin_btn {
@@ -323,12 +282,6 @@ header h1 {
     border: 3px solid black;
     margin: 10px 20px;
 }
-/*
-.admin_btn:hover {
-    color:white;
-    background-color: black;
-}
-*/
 
 .btn:hover {
     color:white;
