@@ -152,135 +152,83 @@ header h1 {
 
 /* btn(ボタン)一覧 */
 /* 最初の画面のボタン */
-.start_btn{
-    text-align: center;
+.start_btn {
     width: 300px;
-    display: block;
     line-height: 6.4em; /* 高さを中央揃え …難しい*/
-    text-decoration: none;
     font-size: 30px;
-    font-weight: bold;
-    border-radius: 5px;
-    color: black;
-    background-color: white;
-    border: 3px solid black;
     margin: 0 50px;
 }
 
 /* ロゴ列右隅のログアウト(TOP)ボタン */
 .head_btn {
-    text-align: center;
     width: 120px;
-    display: block;
-    line-height: 1.5em; /* 高さを中央揃え …難しい */
-    text-decoration: none;
+    line-height: 1.5em; /* 高さを中央揃え …難しい*/
     font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
-    color: black;
-    background-color: white;
-    border: 3px solid black;
     margin: 15px;
 }
 
 /* 管理TOPへのボタン*/
 .admin_top_btn {
-    text-align: center;
     font-weight: bold;
     font-size: 15px;
     width: 200px;
-    display: block;
     line-height: 2em; /* 高さを中央揃え …難しい*/
-    text-decoration: none;
     font-size: 20px;
-    font-weight: bold;
-    border-radius: 5px;
-    color: black;
-    background-color: white;
-    border: 3px solid black;
     margin: 5px;
 }
 
 /* 詳細画面のボタン(カート、お気に入りetc) */
 .detail_btn {
-    text-align: center;
     width: 250px;
-    display: block;
     line-height: 2.4em; /* 高さを中央揃え …難しい*/
-    text-decoration: none;
     font-size: 20px;
-    font-weight: bold;
-    border-radius: 5px;
-    color: black;
-    background-color: white;
-    border: 3px solid black;
     margin: 5px;
     cursor: pointer;
 }
 
 /* 削除ボタン */
 .delete_btn {
-    text-align: center;
     width: 100px;
-    display: block;
     line-height: 1.5em; /* 高さを中央揃え …難しい*/
-    text-decoration: none;
     font-size: 15px;
-    font-weight: bold;
-    border-radius: 5px;
-    color: black;
-    background-color: white;
-    border: 3px solid black;
     margin: 0px auto;
     cursor: pointer;
 }
 
 /* ナビボタン(TOP画面、お気に入り、検索)*/
 .nav_btn {
-    text-align: center;
     width: 150px;
     height: 35px;
-    display: block;
     line-height: 1.5em; /* 高さを中央揃え …難しい*/
-    text-decoration: none;
     font-size: 20px;
-    font-weight: bold;
-    border-radius: 5px;
-    color: black;
-    background-color: white;
-    border: 3px solid black;
 }
 
 /* 購入ボタン */
 .cart_btn {
-    text-align: center;
     width: 250px;
-    display: block;
     line-height: 2.4em; /* 高さを中央揃え …難しい*/
-    text-decoration: none;
     font-size: 20px;
-    font-weight: bold;
-    border-radius: 5px;
-    color: black;
-    background-color: white;
-    border: 3px solid black;
     margin: 0 auto;
 }
 
 /* 管理画面TOPページのボタン */
 .admin_btn {
-    text-align: center;
     width: 250px;
-    display: block;
     line-height: 2.4em; /* 高さを中央揃え …難しい*/
-    text-decoration: none;
     font-size: 20px;
+    margin: 10px 20px;
+}
+
+/* 全ボタン共通設定css */
+.btn {
+    display: block;
+    text-decoration: none;
+    text-align: center;
     font-weight: bold;
     border-radius: 5px;
     color: black;
     background-color: white;
-    border: 3px solid black;
-    margin: 10px 20px;
+    border: 3px solid black;    
 }
 
 .btn:hover {
