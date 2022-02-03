@@ -50,11 +50,14 @@
                         $sflag = 1;
                     }
                 }
+                header("Location:shopping_search.php");
+                /*
                 if ($sflag == 1) {
                     header("Location:shopping_search.php");
                 } else {
                     header("Location:shopping_search.php");
                 }
+                */
                 fclose($sfp);
             }
             ?>  
