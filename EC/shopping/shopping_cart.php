@@ -42,20 +42,14 @@
                 $ilines = file($fileitems,FILE_IGNORE_NEW_LINES);
                 $filesearch = "../csv/search.csv";
                 $sfp = fopen($filesearch, "w");
-                $sflag = 0;
                 foreach ($ilines as $iline) {
                     $iarray = explode(",", $iline);
                     if (preg_match($search, $iarray[1]) || preg_match($search, $iarray[3])) {
                         fwrite($sfp, $iline.PHP_EOL);
-                        $sflag = 1;
                     }
                 }
-                if ($sflag == 1) {
-                    header("Location:shopping_search.php");
-                } else {
-                    header("Location:shopping_search.php");
-                }
                 fclose($sfp);
+                header("Location:shopping_search.php");
             }
             ?>  
         </ul>

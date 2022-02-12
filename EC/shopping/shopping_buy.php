@@ -42,20 +42,14 @@
                 $ilines = file($fileitems,FILE_IGNORE_NEW_LINES);
                 $filesearch = "../csv/search.csv";
                 $sfp = fopen($filesearch, "w");
-                $sflag = 0;
                 foreach ($ilines as $iline) {
                     $iarray = explode(",", $iline);
                     if (preg_match($search, $iarray[1]) || preg_match($search, $iarray[3])) {
                         fwrite($sfp, $iline.PHP_EOL);
-                        $sflag = 1;
                     }
                 }
-                if ($sflag == 1) {
-                    header("Location:shopping_search.php");
-                } else {
-                    header("Location:shopping_search.php");
-                }
                 fclose($sfp);
+                header("Location:shopping_search.php");
             }
             ?>  
         </ul>
@@ -67,6 +61,8 @@
             $filecart = "../csv/cart.csv";
             $clines = file($filecart,FILE_IGNORE_NEW_LINES);
             $total = 0;
+            // 在庫の有無(0は有る)
+            $ns = 0;
             foreach ($clines as $cline) {
                 $c_array = explode(",", $cline);
                 echo "商品名:".$c_array[1]." 数量:".$c_array[9]." 単価:".$c_array[4]." 合計金額:".$c_array[9] * $c_array[4]."円<br>";
@@ -82,8 +78,14 @@
                         fwrite($fpi, $ilines[$i].PHP_EOL);
                         $i++;
                     } else {
-                        fwrite($fpi, $i_array[0].",".$i_array[1].",".$i_array[2].",".$i_array[3].",".$i_array[4].",".$i_array[5] - $c_array[9].",".$i_array[6] + $c_array[9].",".$i_array[7].",".$i_array[8].PHP_EOL);
-                        $i++;
+                        if (($i_array[5] - $c_array[9]) < 0) {
+                            fwrite($fpi, $ilines[$i].PHP_EOL);
+                            $ns = 1;
+                            break;
+                        } else {
+                            fwrite($fpi, $i_array[0].",".$i_array[1].",".$i_array[2].",".$i_array[3].",".$i_array[4].",".$i_array[5] - $c_array[9].",".$i_array[6] + $c_array[9].",".$i_array[7].",".$i_array[8].PHP_EOL);
+                            $i++;
+                        }
                     }
                 }
                 fclose($fpi);
