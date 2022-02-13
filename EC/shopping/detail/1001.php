@@ -42,20 +42,14 @@
                 $ilines = file($fileitems,FILE_IGNORE_NEW_LINES);
                 $filesearch = "../../csv/search.csv";
                 $sfp = fopen($filesearch, "w");
-                $sflag = 0;
                 foreach ($ilines as $iline) {
                     $iarray = explode(",", $iline);
                     if (preg_match($search, $iarray[1]) || preg_match($search, $iarray[3])) {
                         fwrite($sfp, $iline.PHP_EOL);
-                        $sflag = 1;
                     }
                 }
-                if ($sflag == 1) {
-                    header("Location:../shopping_search.php");
-                } else {
-                    header("Location:../shopping_search.php");
-                }
                 fclose($sfp);
+                header("Location:../shopping_search.php");
             }
             ?>
         </ul>
@@ -65,7 +59,7 @@
         $item_num = 1001;
         $filename = "../../csv/items.csv";
         $lines = file($filename);
-        $i;
+        //$i;
         for ($k = 0; $k < count($lines); $k++) {
             $array = explode(",", $lines[$k]);
             if ($item_num == $array[0]) {
@@ -117,11 +111,15 @@
         }
         if (!empty($count) || !empty($cart) || !empty($favorite)) {
             if (!empty($count)) {
-                $filecart = "../../csv/cart.csv";
-                $fp = fopen($filecart, "a");
-                fwrite($fp, $item_info.",".$count.PHP_EOL);
-                fclose($fp);
-                echo "カートへ追加しました。";
+                if ($count > $array[5]) {
+                    echo "在庫不足の為、カートに追加できません。";
+                } else {
+                    $filecart = "../../csv/cart.csv";
+                    $fp = fopen($filecart, "a");
+                    fwrite($fp, $item_info.",".$count.PHP_EOL);
+                    fclose($fp);
+                    echo "カートへ追加しました。";
+                }
             } else if (empty($count) && empty($favorite)) {
                 echo "数量を入力してください。";
             } else {
